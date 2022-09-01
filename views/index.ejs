@@ -14,20 +14,23 @@
    
     <%# Each card will eventually be created to access the database and a card will be generated for every entry
     %>
-
-    <div class="row">
-        <div class="col">
-          <div class="card orange lighten-4">
-            <div class="card-content black-text">
-              <h2 class="card-title">checkins.restuarant</h2>
-              <span>checkins.city , checkins.state -- checkins.country</span>
-              <h4>checkins.foodType</h4>
-              <p>checkins.comment</p>
-              <span>checkins.favDish</span>
-            </div>
-          </div>
+<%posts.forEach(post=>{ %>
+  <div class="row">
+    <div class="col">
+      <div class="card orange lighten-4">
+        <div class="card-content black-text">
+          <h2 class="card-title"><%=post.restaurant%></h2>
+          <span><%=post.city%> , <%=post.state%> -- <%=post.country%></span>
+          <h4><%=post.foodType%></h4>
+          <p><%post.comment%></p>
+          <span><%post.favDish%></span>
         </div>
       </div>
+    </div>
+  </div>
+
+<%}) %>
+
 
       
 

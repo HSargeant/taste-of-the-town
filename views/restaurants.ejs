@@ -4,7 +4,7 @@
         <%console.log(posts)%>
     <% posts.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
-                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.resturant %></span>
+                <span><%= el.restaurant %></span>
                 <span class='del'><button>Delete</button>  </span>
             </li>
     <% }) %>    
