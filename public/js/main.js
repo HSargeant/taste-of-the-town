@@ -3,7 +3,7 @@ const todoItem = document.querySelectorAll('span.not')
 const todoComplete = document.querySelectorAll('span.completed')
 
 Array.from(deleteBtn).forEach((el)=>{
-    el.addEventListener('click', deleteTodo)
+    el.addEventListener('click', deleteCheckin)
 })
 
 Array.from(todoItem).forEach((el)=>{
