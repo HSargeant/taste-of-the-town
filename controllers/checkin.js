@@ -5,7 +5,7 @@ module.exports = {
         console.log(req.user)
         try{
             const posts = await Checkin.find({userId:req.user.id})
-            res.render('restaurants.ejs', {posts: posts, user: req.user})
+            res.render('restaurants.ejs', {title: 'Checkins', posts: posts, user: req.user})
         }catch(err){
             console.log(err)
         }

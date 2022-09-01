@@ -7,7 +7,8 @@ const User = require('../models/User')
       return res.redirect('/todos')
     }
     res.render('login', {
-      title: 'Login'
+      title: 'Login',
+      layout: './layouts/login-signup'
     })
   }
   
@@ -50,7 +51,8 @@ const User = require('../models/User')
       return res.redirect('/todos')
     }
     res.render('signup', {
-      title: 'Create Account'
+      title: 'Create Account',
+      layout: './layouts/login-signup'
     })
   }
   

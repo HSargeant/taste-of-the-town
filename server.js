@@ -1,5 +1,7 @@
+const path = require('path')
 const express = require('express')
 const app = express()
+const expressLayouts = require('express-ejs-layouts')
 const mongoose = require('mongoose')
 const passport = require('passport')
 const session = require('express-session')
@@ -19,7 +21,11 @@ require('./config/passport')(passport)
 connectDB()
 
 app.set('view engine', 'ejs')
-app.use(express.static('public'))
+// ejs layouts
+app.use(expressLayouts)
+app.set('layout', './layouts/main')
+// static folder
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(logger('dev'))
