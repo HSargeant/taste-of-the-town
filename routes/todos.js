@@ -3,14 +3,10 @@ const router = express.Router()
 const todosController = require('../controllers/checkin') 
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
-router.get('/', ensureAuth, todosController.getTodos)
+router.get('/', ensureAuth, todosController.getCheckins)
 
-router.post('/createTodo', todosController.createTodo)
+router.post('/createCheckin', todosController.createCheckin)
 
-router.put('/markComplete', todosController.markComplete)
-
-router.put('/markIncomplete', todosController.markIncomplete)
-
-router.delete('/deleteTodo', todosController.deleteTodo)
+router.delete('/deleteCheckin', todosController.deleteCheckin)
 
 module.exports = router

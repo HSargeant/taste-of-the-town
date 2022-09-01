@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Todos</h1>
+    <ul>
+        <%console.log(posts)%>
+    <% posts.forEach( el => { %>
+            <li class='todoItem' data-id='<%=el._id%>'>
+                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.resturant %></span>
+                <span class='del'><button>Delete</button>  </span>
+            </li>
+    <% }) %>    
+    </ul>
+
+    <h2><%= user.userName %></h2>
+
+    <form action="/todos/createCheckin" method='POST' id="submitForm">
+        <label for="name">Resturant Name:</label>
+        <input type="text" placeholder="" name='name'>
+        <label for="country">Country:</label>
+        <input type="text" placeholder="enter country" name='country'>
+        <label for="state">State/Province:</label>
+        <input type="text" placeholder="state/provicne" name='state'>
+        <label for="city">City:</label>
+        <input type="text" placeholder="city" name='city'>
+        <label for="foodType">Type of Food:</label>
+        <input type="text" placeholder="" name='foodType'>
+        <label for="favDish">Favorite Dish:</label>
+        <input type="text" name='favDish'>
+        <label for="comment">Comment:</label>
+        <input type="text" placeholder="comment" name='comment'>
+        <select id="status" name="status">
+            <option value="public" selected>Public</option>
+            <option value="private">Private</option>
+        </select>
+        <input type="submit">
+    </form>
+
+    <a href="/logout">Logout</a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

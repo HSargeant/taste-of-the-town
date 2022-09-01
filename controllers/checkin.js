@@ -1,20 +1,29 @@
-const Todo = require('../models/Checkin')
+const Checkin = require('../models/Checkin')
 
 module.exports = {
-    getTodos: async (req,res)=>{
+    getCheckins: async (req,res)=>{
         console.log(req.user)
         try{
-            const todoItems = await Todo.find({userId:req.user.id})
-            const itemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false})
-            res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
+            const posts = await Checkin.find({userId:req.user.id})
+            res.render('restaurants.ejs', {posts: posts, user: req.user})
         }catch(err){
             console.log(err)
         }
     },
-    createTodo: async (req, res)=>{
+    createCheckin: async (req, res)=>{
         try{
-            await Todo.create({todo: req.body.todoItem, completed: false, userId: req.user.id})
-            console.log('Todo has been added!')
+            await Checkin.create({
+                resturant: req.body.name,
+                state: req.body.state, 
+                userId: req.user.id,
+                city: req.body.city,
+                country: req.body.country,
+                comment: req.body.comment,
+                favDish: req.body.favDish,
+                foodType: req.body.foodType,
+                public: "True",
+            })
+            console.log('Checkin has been added!')
             res.redirect('/todos')
         }catch(err){
             console.log(err)
@@ -22,7 +31,7 @@ module.exports = {
     },
     markComplete: async (req, res)=>{
         try{
-            await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
+            await Checkin.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
                 completed: true
             })
             console.log('Marked Complete')
@@ -33,7 +42,7 @@ module.exports = {
     },
     markIncomplete: async (req, res)=>{
         try{
-            await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
+            await Checkin.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
                 completed: false
             })
             console.log('Marked Incomplete')
@@ -42,11 +51,11 @@ module.exports = {
             console.log(err)
         }
     },
-    deleteTodo: async (req, res)=>{
+    deleteCheckin: async (req, res)=>{
         console.log(req.body.todoIdFromJSFile)
         try{
-            await Todo.findOneAndDelete({_id:req.body.todoIdFromJSFile})
-            console.log('Deleted Todo')
+            await Checkin.findOneAndDelete({_id:req.body.todoIdFromJSFile})
+            console.log('Deleted Checkin')
             res.json('Deleted It')
         }catch(err){
             console.log(err)
