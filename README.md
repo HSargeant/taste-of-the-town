@@ -1,38 +1,24 @@
-# Introduction
+# Taste of the Town
 
+Full-stack social application for logging private and public restaurant experiences. Public experiences are available to any website visitor; however, an account is necessary to post and interact with other reviews.
 
+[LIVE APP DUE 9/6/2022 (EST)](https://www.google.com/ "Taste of the Town")
 
----
+## Features
 
+Within *Taste of the Town*, you can view all public restaurant experiences, and if you have an account, you can create your own blurbs to track privately or post publicly. These posts can be liked and filtered based on the desireable category (i.e. recent, most-liked, country, cuisine)
 
----
+## Packages
 
-# Objectives
+This node.js application primarily utilizes ejs for templating, express for server framework, mongoDB and mongoose for database storage, passport-local for accounts and authentication, bcrypt for password encryption, materialize as a css framework, and several others for other details (listed in package.json).
 
+## Current Objectives
 
----
+- improve UX/UI
 
-# Who is this for? 
+## Use
 
-
-
----
-
-# Packages/Dependencies used 
-
-bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator
-
----
-
-# Install all the dependencies or node packages used for development via Terminal
-
-`npm install` 
-
----
-
-# Things to add
-
-- Create a `.env` file and add the following as `key: value` 
-  - PORT: 2121 (can be any port example: 3000) 
-  - DB_STRING: `your database URI` 
- ---
+- npm install
+- /config/.env
+  - PORT = insert_PORT_number
+  - DB_STRING = insert_mongoDB_connection_string
