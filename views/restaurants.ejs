@@ -1,37 +1,35 @@
- 
- 
 <main class="container">
-    <h1><%=user.userName %>'s TOTT Reviews </h1>
-    <p>You have created <%= posts.length %> reviews. Thanks for sharing!</p>
-    <p>Feel free to add reviews or edit any reviews you have previously made.</p> 
-    
-    <%posts.forEach(post=>{ %>
+  <h1><%=user.userName %>'s TOTT Reviews </h1>
+  <p>You have created <%= posts.length %> reviews. Thanks for sharing!</p>
+  <p>Feel free to add reviews or edit any reviews you have previously made.</p>     
+  
+  <%posts.forEach(post=>{ %>
         <div class="row" data-id='<%=post._id%>'>
           <div class="col">
             <div class="card orange lighten-4">
               <div class="card-content black-text">
-     
+      
                 <!-- <span>we need to add the username of the poster here!</span> -->
-     
+      
                 <h2 class="card-title"><%=post.restaurant%></h2>
                 <span><%=post.city%> , <%=post.state%> -- <%=post.country%></span>
                 <h4 class="foodTypeSection"><%=post.foodType%></h4>
                 <span class="favDishSection">Favorite dish: <%=post.favDish%>.</span>
                 <p class="commentSection">"<%=post.comment%>"</p>
                 <%if(user._Id==post.UserId){%>
-               
+                
                 <i class="material-icons right delete">delete</i>
                 <%}%>
               </div>
- 
+
             </div>
-           
+            
           </div>
         </div>
-     
+      
       <%}) %>
- 
+
+
+
+    
 </main>
-
-
- 
