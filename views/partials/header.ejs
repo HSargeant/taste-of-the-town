@@ -1,12 +1,14 @@
 <header>
     <nav>
         <div class="nav-wrapper orange lighten-1">
-        <a href="#" class="brand-logo center ">Type Of The Town</a>
+        <a href="#" class="brand-logo center ">Tastes Of The Town</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/">Home</a></li>
             <%if(user){%>
-                <li><a href="/reviews">Your Reviews</a></li>
+               <li><a href="/reviews">Your Reviews</a></li>
                <li> <a href="/logout">Logout</a></li>
+               <li><i class="fa-solid fa-circle-user"></i></li>
+               <li><%= user.userName %></li>
             <%}else{ %>
                 <li><a href="/login">Login</a></li>
                 <li><a href="/signup">Signup</a></li>
