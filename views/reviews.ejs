@@ -12,7 +12,7 @@
                 <!-- <span>we need to add the username of the poster here!</span> -->
       
                 <h2 class="card-title"><%=post.restaurant%></h2>
-                <span>Location: <%=post.city%> , <%=post.state%> -- <%=post.country%></span>
+                <span>Location: <%=post.city%> , <%=post.state%> -- <%=post.country.split('-').join(' ')%></span>
                 <h4 class="foodTypeSection">Type: <%=post.foodType%></h4>
                 <span class="favDishSection">Favorite dish: <%=post.favDish%>.</span>
                 <p class="commentSection">Comment: "<%=post.comment%>"</p>
