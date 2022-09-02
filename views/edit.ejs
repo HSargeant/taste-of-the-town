@@ -1,0 +1,31 @@
+<main class="container">
+    <h3>Edit Your Review</h3>
+    <%console.log(post._id)%>
+    <form class= "formReview black-text edit" action="/reviews/update" method='PUT' id="<%=post._id%>">
+        <label for="restaurant" class="black-text">Restaurant Name:</label>
+        <input type="text" placeholder="" name='restaurant' value="<%=post.restaurant%>">
+        <label for="country" class="black-text">Country:</label>
+        <input name="country" value="<%=post.country%>">
+        <!-- <input type="text" placeholder="Enter country" name='country'> -->
+        <label for="state"class="black-text">State/Province/Region:</label>
+        <input type="text" placeholder="State/Province/Region" name='state' value="<%=post.state%>">
+        <label for="city"class="black-text">City:</label>
+        <input type="text" placeholder="City" name='city' value="<%=post.city%>">
+        <label for="foodType"class="black-text">Type of Food:</label>
+        <input type="text" placeholder="" name='foodType' value="<%=post.foodType%>">
+        <label for="favDish"class="black-text">Favorite Dish:</label>
+        <input type="text" name='favDish' value="<%=post.favDish%>">
+        <label for="comment"class="black-text">Comment:</label>
+        <input type="text" placeholder="Write a comment" name='comment' value="<%=post.comment%>">
+        <select id="status" name="status" value="<%=post.status%>">
+            <% if(post.status == "public"){ %>
+                <option value="public" selected>Public</option>
+                <option value="private" >Private</option>  
+            <% }else { %>
+                <option value="public" >Public</option>
+                <option value="private" selected>Private</option>   
+            <% } %> 
+        </select>
+        <input type="submit">
+    </form>
+</main>

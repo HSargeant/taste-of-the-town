@@ -1,7 +1,7 @@
 <header>
     <nav>
         <div class="nav-wrapper orange lighten-1">
-        <a href="#" class="brand-logo center ">Type Of The Town</a>
+        <a href="#" class="brand-logo center ">Taste Of The Town</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/">Home</a></li>
             <%if(user){%>
@@ -21,10 +21,10 @@
     <div class="modal-content black-text">
         <h3>Add A Review</h3>
         <form class= "formReview black-text" action="/reviews/createCheckin" method='POST' id="submitForm">
-            <label for="name" class="black-text">Restaurant Name:</label>
-            <input type="text" placeholder="" name='name'>
+            <label for="restaurant" class="black-text">Restaurant Name:</label>
+            <input type="text" placeholder="" name='restaurant'>
             <label for="country" class="black-text">Country:</label>
-            <select>
+            <select name="country">
             <option value="Afghanistan">Afghanistan</option>
             <option value="Åland Islands">Åland Islands</option>
             <option value="Albania">Albania</option>
@@ -39,7 +39,7 @@
             <option value="Armenia">Armenia</option>
             <option value="Aruba">Aruba</option>
             </select>
-            <input type="text" placeholder="Enter country" name='country'>
+            <!-- <input type="text" placeholder="Enter country" name='country'> -->
             <label for="state"class="black-text">State/Province/Region:</label>
             <input type="text" placeholder="State/Province/Region" name='state'>
             <label for="city"class="black-text">City:</label>
