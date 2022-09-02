@@ -1,5 +1,5 @@
 <main>
-    <h1>Add a Restuarant Review</h1>
+    <h1>Add a Restaurant Review</h1>
     <ul>
         <%console.log(posts)%>
     <% posts.forEach( el => { %>
@@ -12,8 +12,8 @@
 
     <h2><%= user.userName %></h2>
 
-    <form action="/todos/createCheckin" method='POST' id="submitForm">
-        <label for="name">Resturant Name:</label>
+    <form action="/reviews/createCheckin" method='POST' id="submitForm">
+        <label for="name">Restaurant Name:</label>
         <input type="text" placeholder="" name='name'>
         <label for="country">Country:</label>
         <input type="text" placeholder="enter country" name='country'>
