@@ -16,7 +16,7 @@
         <div class="card-content black-text">
 
           <h2 class="card-title"><%=post.restaurant%></h2>
-          <span>Location: <%=post.city%>, <%=post.state%> -- <%=post.country%></span>
+          <span>Location: <%=post.city%>, <%=post.state%> -- <%=post.country.split('-').join(' ')%></span>
           <h4 class="foodTypeSection">Type: <%=post.foodType%></h4>
           <span class="favDishSection">Favorite Dish: <%=post.favDish%>.</span>
           <p class="commentSection">Comment: <%=post.comment%>"</p>

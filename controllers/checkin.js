@@ -1,11 +1,12 @@
 const Checkin = require('../models/Checkin')
+const countryList = require('country-list')
 
 module.exports = {
     getCheckins: async (req,res)=>{
         // console.log(req.user)
         try{
             const posts = await Checkin.find({userId:req.user.id})
-            res.render('reviews.ejs', {title: 'Tastes of the Town', posts: posts, user: req.user})
+            res.render('reviews.ejs', {title: 'Tastes of the Town', posts: posts, user: req.user, countryData: countryList.getData()})
         }catch(err){
             console.log(err)
         }
