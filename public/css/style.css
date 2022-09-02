@@ -20,7 +20,7 @@ h1{
 /*used inline block to make the main page posts be next to each other (now by 3, like they're POst-its. if you want to only 2 posts per row, go to .card-content.black-text here on CSS and change the width to "40rem" ).*/
 .row {
     display: inline-block;
-    margin-left: 4.5rem;
+    margin-left: 4.7rem;
 }
 
 /* this is the size of each post on the main page. If you want just only 2 posts per row change the width to 40rem*/
