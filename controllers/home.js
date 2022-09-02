@@ -5,7 +5,7 @@ module.exports = {
         console.log(req.user)
         try{
             const posts = await Checkin.find({status:"public"})
-            res.render('index.ejs', {title: 'Type of the Town', posts: posts, user: req.user})
+            res.render('index.ejs', {title: 'Tastes of the Town', posts: posts, user: req.user})
         }catch(err){
             console.log(err)
         }
