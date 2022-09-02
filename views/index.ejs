@@ -19,7 +19,7 @@ integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7
         </div>
       </nav>
 
-    <p class='center'>Welcome to Type of the Town. Check out the reviews from others in your area or <a href="/signup">signup</a> up and start sharing your own great food finds!</p>
+    <p class='center message'>Welcome to Type of the Town. Check out the reviews from others in your area or <a href="/signup">signup</a> up and start sharing your own great food finds!</p>
 
    
     <%# Each card will eventually be created to access the database and a card will be generated for every entry
@@ -29,11 +29,14 @@ integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7
     <div class="col">
       <div class="card orange lighten-4">
         <div class="card-content black-text">
+
+          <!-- <span>we need to add the username of the poster here!</span> -->
+
           <h2 class="card-title"><%=post.restaurant%></h2>
           <span><%=post.city%> , <%=post.state%> -- <%=post.country%></span>
-          <h4><%=post.foodType%></h4>
-          <p><%post.comment%></p>
-          <span><%post.favDish%></span>
+          <h4 class="foodTypeSection"><%=post.foodType%></h4>
+          <span class="favDishSection">Favorite dish: <%=post.favDish%>.</span>
+          <p class="commentSection">"<%=post.comment%>"</p>
         </div>
       </div>
     </div>

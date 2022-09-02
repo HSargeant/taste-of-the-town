@@ -17,6 +17,13 @@ h1{
     text-decoration: underline;
 }
 
+
+/* this is the "welcome..." message paragraph */
+.center.message{
+    margin: 2rem;
+}
+
+
 /*used inline block to make the main page posts be next to each other (now by 3, like they're POst-its. if you want to only 2 posts per row, go to .card-content.black-text here on CSS and change the width to "40rem" ).*/
 .row {
     display: inline-block;
@@ -29,3 +36,17 @@ h1{
     width: 20em;
 }
 
+.card-title{
+    font-weight: 400 !important;
+    text-align: center;
+}
+
+.foodTypeSection{
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.commentSection{
+    margin-top: 1rem !important;
+    text-align: justify;
+}
