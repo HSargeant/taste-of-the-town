@@ -1,7 +1,7 @@
 <main>
     <h1><%=user.userName %>'s TOTT Reviews </h1>
 
-    <p>You have created THIS MANY reviews. Thanks for sharing!</p>
+    <p>You have created <%= posts.length %> reviews. Thanks for sharing!</p>
     <p>Feel free to add reviews or edit any reviews you have previously made.</p> 
     
     <%posts.forEach(post=>{ %>
