@@ -1,16 +1,22 @@
 const deleteBtn = document.querySelectorAll('.delete')
 const todoItem = document.querySelectorAll('span.not')
 const todoComplete = document.querySelectorAll('span.completed')
- 
+var formsSelect = document.querySelectorAll('select');
+M.FormSelect.init(formsSelect);
+
 document.addEventListener('DOMContentLoaded', function() {
-    var modal = document.querySelectorAll('.modal');
+    const modal = document.querySelectorAll('.modal');
     M.Modal.init(modal,"dismissible");
  
-    var formsSelect = document.querySelectorAll('select');
+    const formsSelect = document.querySelectorAll('select');
     M.FormSelect.init(formsSelect);
+
  
   });
+
+  
  
+
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteReview)
 })
@@ -43,14 +49,15 @@ async function deleteReview(){
     }
 }
  
-async function markComplete(){
-    const todoId = this.parentNode.dataset.id
+async function updateReview(){
+    const review = document.querySelector('.edit').id
+    console.log(review)
     try{
-        const response = await fetch('todos/markComplete', {
+        const response = await fetch('reviews/updateCheckin', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'todoIdFromJSFile': todoId
+                'review': review
             })
         })
         const data = await response.json()
@@ -59,23 +66,4 @@ async function markComplete(){
     }catch(err){
         console.log(err)
     }
-}
- 
-async function markIncomplete(){
-    const todoId = this.parentNode.dataset.id
-    try{
-        const response = await fetch('todos/markIncomplete', {
-            method: 'put',
-            headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({
-                'todoIdFromJSFile': todoId
-            })
-        })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
-    }catch(err){
-        console.log(err)
-    }
-
 }

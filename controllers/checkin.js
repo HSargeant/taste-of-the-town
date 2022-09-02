@@ -2,10 +2,10 @@ const Checkin = require('../models/Checkin')
 
 module.exports = {
     getCheckins: async (req,res)=>{
-        console.log(req.user)
+        // console.log(req.user)
         try{
             const posts = await Checkin.find({userId:req.user.id})
-            res.render('restaurants.ejs', {title: 'Tastes of the Town', posts: posts, user: req.user})
+            res.render('reviews.ejs', {title: 'Tastes of the Town', posts: posts, user: req.user})
         }catch(err){
             console.log(err)
         }
@@ -14,7 +14,7 @@ module.exports = {
     createCheckin: async (req, res)=>{
         try{
             await Checkin.create({
-                restaurant: req.body.name,
+                restaurant: req.body.restaurant,
                 state: req.body.state, 
                 userId: req.user.id,
                 city: req.body.city,
@@ -39,5 +39,36 @@ module.exports = {
         }catch(err){
             console.log(err)
         }
-    }
+    },
+    editCheckin: async (req,res)=>{
+        console.log(req.user.id,req.params.id)
+
+        const review = await Checkin.findOne({
+            _id: req.params.id
+        }).lean()
+            console.log(review)
+   
+        if(!review){
+            res.render('error/404')
+        }
+    
+        if(review.userId != req.user.id){
+            res.redirect('/')
+        }else      res.render('./edit.ejs',{ 
+            post: review,title:"Taste of the Town", user:req.user.id
+        })
+    },
+    updateCheckin: async (req, res)=>{
+        try{
+            await Checkin.findOneAndUpdate({_id:mongoose.Types.ObjectId(`${req.body.review}`)},{
+                country: req.body.country,
+             
+            })
+            console.log('updated')
+            res.json('updated')
+        }catch(err){
+            console.log(err)
+        }
+    },
+
 }    
