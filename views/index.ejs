@@ -9,7 +9,8 @@
     <%# Each card will eventually be created to access the database and a card will be generated for every entry
     %>
 <%posts.forEach(post=>{ %>
-  <div class="row">
+
+  <div class="row" data-id='<%=post._id%>'>
     <div class="col">
       <div class="card orange lighten-4">
         <div class="card-content black-text">
@@ -21,6 +22,14 @@
           <h4 class="foodTypeSection"><%=post.foodType%></h4>
           <span class="favDishSection">Favorite dish: <%=post.favDish%>.</span>
           <p class="commentSection">"<%=post.comment%>"</p>
+          <%if(user){%>
+            <%if(post.userId==user._id){%>
+                
+              <i class="material-icons right delete">delete</i>
+              <%}%>
+
+          <%}%>
+          
         </div>
       </div>
     </div>
