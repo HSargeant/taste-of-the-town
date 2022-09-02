@@ -31,9 +31,9 @@ module.exports = {
         }
     },
     deleteCheckin: async (req, res)=>{
-        console.log(req.body.todoIdFromJSFile)
+        console.log(req.body.reviewId)
         try{
-            await Checkin.findOneAndDelete({_id:req.body.todoIdFromJSFile})
+            await Checkin.findOneAndDelete({_id:req.body.reviewId})
             console.log('Deleted Checkin')
             res.json('Deleted It')
         }catch(err){
