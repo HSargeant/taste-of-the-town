@@ -5,15 +5,16 @@ module.exports = {
         console.log(req.user)
         try{
             const posts = await Checkin.find({userId:req.user.id})
-            res.render('restaurants.ejs', {title: 'Checkins', posts: posts, user: req.user})
+            res.render('restaurants.ejs', {title: 'Type of the Town', posts: posts, user: req.user})
         }catch(err){
             console.log(err)
         }
+        //changed title from Checkins
     },
     createCheckin: async (req, res)=>{
         try{
             await Checkin.create({
-                resturant: req.body.name,
+                restaurant: req.body.name,
                 state: req.body.state, 
                 userId: req.user.id,
                 city: req.body.city,
@@ -21,32 +22,10 @@ module.exports = {
                 comment: req.body.comment,
                 favDish: req.body.favDish,
                 foodType: req.body.foodType,
-                public: "True",
+                status: req.body.status,
             })
             console.log('Checkin has been added!')
-            res.redirect('/todos')
-        }catch(err){
-            console.log(err)
-        }
-    },
-    markComplete: async (req, res)=>{
-        try{
-            await Checkin.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
-                completed: true
-            })
-            console.log('Marked Complete')
-            res.json('Marked Complete')
-        }catch(err){
-            console.log(err)
-        }
-    },
-    markIncomplete: async (req, res)=>{
-        try{
-            await Checkin.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
-                completed: false
-            })
-            console.log('Marked Incomplete')
-            res.json('Marked Incomplete')
+            res.redirect('/reviews')
         }catch(err){
             console.log(err)
         }
