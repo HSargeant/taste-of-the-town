@@ -14,8 +14,8 @@
                 <h2 class="card-title"><%=post.restaurant%></h2>
                 <span>Location: <%=post.city%> , <%=post.state%> -- <%=post.country.split('-').join(' ')%></span>
                 <h4 class="foodTypeSection">Type: <%=post.foodType%></h4>
-                <span class="favDishSection">Favorite dish: <%=post.favDish%>.</span>
-                <p class="commentSection">Comment: "<%=post.comment%>"</p>
+                <span class="favDishSection">Favorite dish: <%=post.favDish%></span>
+                <p class="commentSection">"<%=post.comment%>"</p>
                 <%if(user._Id==post.UserId){%>
                   <a href="/reviews/<%=post._id%>"><i class="fas fa-edit left edit"></i></a>
                 <i class="fas fa-trash right delete"></i>

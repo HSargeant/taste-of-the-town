@@ -18,8 +18,9 @@
           <h2 class="card-title"><%=post.restaurant%></h2>
           <span>Location: <%=post.city%>, <%=post.state%> -- <%=post.country.split('-').join(' ')%></span>
           <h4 class="foodTypeSection">Type: <%=post.foodType%></h4>
-          <span class="favDishSection">Favorite Dish: <%=post.favDish%>.</span>
-          <p class="commentSection">Comment: <%=post.comment%>"</p>
+          <span class="favDishSection">Favorite Dish: <%=post.favDish%></span>
+          <p class="commentSection">"<%=post.comment%>" <a href="/users/<%=post._id%>">Author</a></p>
+
 
           <!-- <span>Reviewed by ADD USERNAME that matches the POST </span> -->
 
