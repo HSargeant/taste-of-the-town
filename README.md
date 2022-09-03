@@ -25,8 +25,8 @@ This node.js application primarily utilizes ejs for templating, express for serv
 
 ## Authors
 
-[HSargeant](https://github.com/HSargeant "HSargeant Github")  |  
-[lfrendahl](https://github.com/lfrendahl "lfrendahl Github")  |  
-[franciisca](https://github.com/franciisca "franciisca Github")  |  
-[MorgLivingston](https://github.com/MorgLivingston "MorgLivingston Github")  |  
-[cory-simpson-dev](https://github.com/cory-simpson-dev "cory-simpson-dev Github")
+- [HSargeant](https://github.com/HSargeant "HSargeant Github")
+- [lfrendahl](https://github.com/lfrendahl "lfrendahl Github")
+- [franciisca](https://github.com/franciisca "franciisca Github")
+- [MorgLivingston](https://github.com/MorgLivingston "MorgLivingston Github")
+- [cory-simpson-dev](https://github.com/cory-simpson-dev "cory-simpson-dev Github")
