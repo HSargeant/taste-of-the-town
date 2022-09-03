@@ -15,10 +15,14 @@
     <div class="col">
       <div class="card orange lighten-4">
         <div class="card-content black-text">
-          <%if(post.userId._id==user._id.toString()){ %>
-            <a href="/reviews"><%=post.userId.userName%></a></p>
-          <%}else{ %>
-            <a href="/reviews/user/<%=post.userId._id.toString()%>"><%=post.userId.userName%></a></p>
+          <%if(user){%>
+            <%if(post.userId._id==user._id.toString()){%>
+              <a href="/reviews><%=post.userId.userName%></a>
+
+              <%}%>
+
+            <%}else{%>
+          <a href="/reviews/user/<%=post.userId._id.toString()%>"><%=post.userId.userName%></a>
           <%}%>
           <h2 class="card-title"><%=post.restaurant%></h2>
           <span>Location: <%=post.city%>, <%=post.state%> -- <%=post.country.split('-').join(' ')%></span>
