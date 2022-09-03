@@ -1,12 +1,13 @@
 <main class="container">
     <h3>Edit Your Review</h3>
     <%console.log(post._id)%>
-    <form class= "formReview black-text edit" action="/reviews/update" method='PUT' id="<%=post._id%>">
+    <form class= "formReview black-text edit" action="/reviews/update" method='POST' id="<%=post._id%>">
+        <input type="hidden" name="_method" value="PUT">
+        <input type="hidden" name="_id" value="<%=post._id%>">
         <label for="restaurant" class="black-text">Restaurant Name:</label>
         <input type="text" placeholder="" name='restaurant' value="<%=post.restaurant%>">
         <label for="country" class="black-text">Country:</label>
         <input name="country" value="<%=post.country%>">
-        <!-- <input type="text" placeholder="Enter country" name='country'> -->
         <label for="state"class="black-text">State/Province/Region:</label>
         <input type="text" placeholder="State/Province/Region" name='state' value="<%=post.state%>">
         <label for="city"class="black-text">City:</label>

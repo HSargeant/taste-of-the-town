@@ -56,17 +56,28 @@ module.exports = {
         if(review.userId != req.user.id){
             res.redirect('/')
         }else      res.render('./edit.ejs',{ 
-            post: review,title:"Taste of the Town", user:req.user.id
+            post: review,title:"Taste of the Town", user:req.user.id, countryData: countryList.getData()
         })
     },
     updateCheckin: async (req, res)=>{
+        console.log(req.body)
         try{
-            await Checkin.findOneAndUpdate({_id:mongoose.Types.ObjectId(`${req.body.review}`)},{
+            await Checkin.findOneAndUpdate({_id: req.body._id},{
+                restaurant: req.body.restaurant,
+                state: req.body.state, 
+                userId: req.user.id,
+                city: req.body.city,
                 country: req.body.country,
-             
+                comment: req.body.comment,
+                favDish: req.body.favDish,
+                foodType: req.body.foodType,
+                status: req.body.status,                
+            }, {
+                new: true,
+                runValidators: true
             })
+            res.redirect('/reviews')
             console.log('updated')
-            res.json('updated')
         }catch(err){
             console.log(err)
         }
