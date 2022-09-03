@@ -19,31 +19,68 @@
 
   <div id="modal1" class="modal">
     <div class="modal-content black-text">
-        <h3>Add A Review</h3>
+        <div class="row">
+            <div class="col s12">
+                <h3 class="center">Write A Review</h3>
+            </div>
+        </div>
         <form class= "formReview black-text" action="/reviews/createCheckin" method='POST' id="submitForm">
-            <label for="restaurant" class="black-text">Restaurant Name:</label>
-            <input type="text" placeholder="" name='restaurant'>
-            <label for="country">Country:</label>
-                <select class='browser-default' name="country" id="country">
+        <div class="row">
+            <div class="col s12 input-field">
+                <input tabindex="1" class="validate" type="text" name='restaurant' id="restaurant-modal">
+                <label for="restaurant-modal">Restaurant Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s4 input-field">
+                <!-- <select class='browser-default' name="country" id="country">
                 <% for (let i = 0; i < countryData.length; i++) { %>
                     <option value=<%= countryData[i].name.split(' ').join('-') %>><%= countryData[i].name %></option>
                 <% } %>
+                </select> -->
+                <input name="country" tabindex="2" type="text" class="autocomplete validate" id="autocomplete-input">
+                <label for="autocomplete-input">Country</label>
+            </div>
+            <div class="col s4 input-field">
+                <input tabindex="3" class="validate" type="text" name='state' id="state-modal">
+                <label for="state-modal">State/Province/Region</label>
+            </div>
+            <div class="col s4 input-field">
+                <input tabindex="4" class="validate" type="text" name='city' id="city-modal">
+                <label for="city-modal">City</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s6 input-field">
+                <input tabindex="5" class="validate" type="text" name='foodType' id="foodType-modal">
+                <label for="foodType-modal">Type of Food</label>
+            </div>
+            <div class="col s6 input-field">
+                <input tabindex="6" class="validate" type="text" name='favDish' id="favDish-modal">
+                <label for="favDish-modal">Favorite Dish</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 input-field">
+                <input tabindex="7" class="validate" type="text" name='comment' id="comment-modal">
+                <label for="comment-modal">Comment</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s9 input-field">
+                <!-- tab index doesn't work on select -->
+                <select tabindex="8" class="validate" id="status" name="status">
+                    <option value="public" selected>Public (all visitors can see this review)</option>
+                    <option value="private">Private (only you can see this review)</option>
                 </select>
-            <label for="state"class="black-text">State/Province/Region:</label>
-            <input type="text" placeholder="State/Province/Region" name='state'>
-            <label for="city"class="black-text">City:</label>
-            <input type="text" placeholder="City" name='city'>
-            <label for="foodType"class="black-text">Type of Food:</label>
-            <input type="text" placeholder="" name='foodType'>
-            <label for="favDish"class="black-text">Favorite Dish:</label>
-            <input type="text" name='favDish'>
-            <label for="comment"class="black-text">Comment:</label>
-            <input type="text" placeholder="Write a comment" name='comment'>
-            <select id="status" name="status">
-                <option value="public" selected>Public</option>
-                <option value="private">Private</option>
-            </select>
-            <input type="submit">
+            </div>
+            <div class="col s3 input-field">
+                <button class="btn waves-effect waves-light modal-submit right" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </div>
+            <!-- <input type="submit"> -->
         </form>
     </div>
 </div>

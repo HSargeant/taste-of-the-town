@@ -32,7 +32,7 @@ h1{
 
 
 /*used inline block to make the main page posts be next to each other (now by 3, like they're POst-its. if you want to only 2 posts per row, go to .card-content.black-text here on CSS and change the width to "40rem" ).*/
-.row {
+.row-local-css {
     display: inline-block;
     margin-left: 4.7rem;
 }
@@ -59,14 +59,41 @@ h1{
 }
 
 /* css of the Form on the restaurant.ejs(views) */
-.formReview{
-    margin-left: 2rem;
-    margin-right: 5rem;
-}
+
 .modal {
     top:0;
     max-width: 100%;
     max-height: 85%; 
     overflow: auto;
-    
-  } 
+} 
+
+.formReview {
+    padding: 0 2rem;
+}
+
+.input-field input[type=text]:focus + label {
+    color: orange !important;
+}
+
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid orange !important;
+    box-shadow: 0 1px 0 0 orange !important;
+}
+
+.btn.modal-submit {
+    background-color: orange;
+}
+
+ul.dropdown-content.select-dropdown li span {
+    color: orange;
+}
+
+.input-field input[type=text].valid {
+    border-bottom: 1px solid orange;
+    box-shadow: 0 1px 0 0 orange;
+}
+
+.input-field input[type=text].invalid {
+   border-bottom: 1px solid red;
+   box-shadow: 0 1px 0 0 red;
+}
