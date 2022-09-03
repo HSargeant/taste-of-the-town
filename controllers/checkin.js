@@ -12,6 +12,16 @@ module.exports = {
         }
         //changed title from Checkins
     },
+    getUserCheckins: async (req,res)=>{
+        try{
+            const posts = await Checkin.find({userId:req.params.id,status:"public"})
+            .populate('userId')
+            res.render('user.ejs', {title: 'Tastes of the Town', posts: posts, user: req.user, countryData: countryList.getData()})
+        }catch(err){
+            console.log(err)
+        }
+        //changed title from Checkins
+    },
     createCheckin: async (req, res)=>{
         try{
             await Checkin.create({

@@ -52,21 +52,21 @@ async function deleteReview(){
     }
 }}
  
-async function updateReview(){
-    const review = document.querySelector('.edit').id
-    console.log(review)
-    try{
-        const response = await fetch('reviews/updateCheckin', {
-            method: 'put',
-            headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({
-                'review': review
-            })
-        })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
-    }catch(err){
-        console.log(err)
-    }
-}
+// async function updateReview(){
+//     const review = document.querySelector('.edit').id
+//     console.log(review)
+//     try{
+//         const response = await fetch('reviews/updateCheckin', {
+//             method: 'put',
+//             headers: {'Content-type': 'application/json'},
+//             body: JSON.stringify({
+//                 'review': review
+//             })
+//         })
+//         const data = await response.json()
+//         console.log(data)
+//         location.reload()
+//     }catch(err){
+//         console.log(err)
+//     }
+// }

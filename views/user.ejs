@@ -1,0 +1,41 @@
+<main class="container">
+    <h1><%=posts[0].userId.userName%>'s TOTT Reviews </h1>
+    <p> <%=posts[0].userId.userName%> has created <%=posts.length %> 
+      <% if(posts.length==1) { %>
+      review.
+    <% } else { %>  
+      reviews.
+   <% } %></p>
+    <%posts.forEach(post=>{ %>
+        <%console.log(post.userId)%>
+
+          <div class="row-local-css" data-id='<%=post._id%>'>
+            <div class="col">
+              <div class="card orange lighten-4">
+                <div class="card-content black-text">
+        
+                  <!-- <span>we need to add the username of the poster here!</span> -->
+        
+                  <h2 class="card-title"><%=post.restaurant%></h2>
+                  <span>Location: <%=post.city%>, <%=post.state%> -- <%=post.country.split('-').join(' ')%></span>
+                  <h4 class="foodTypeSection">Type: <%=post.foodType%></h4>
+                  <span class="favDishSection">Favorite dish: <%=post.favDish%></span>
+                  <p class="commentSection">"<%=post.comment%>"</p>
+                  <%if(post.userId._id.toString()==user._id.toString()){%>
+                    <a href="/reviews/<%=post._id%>" ><i class="fas fa-edit left edit"></i></a>
+                 <i class="fas fa-trash right delete"></i>
+                 
+                  <%}%>
+                </div>
+  
+              </div>
+              
+            </div>
+          </div>
+        
+        <%}) %>
+  
+  
+  
+      
+  </main>
