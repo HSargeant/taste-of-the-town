@@ -1,21 +1,13 @@
-<main>
-    <nav>
-        <div class="nav-wrapper orange lighten-1">
-          <a href="#" class="brand-logo center ">Tastes of the Town</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/login">Login</a></li>
-            <li><a href="/signup">Signup</a></li>
-          </ul>
-        </div>
-      </nav>
+<main >
+
     <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
     <% } %>
-    <div class="container">
-          <div class="card orange lighten-4 center">
-            <div class="card-content black-text">
+    <div class="container center">
+      <div class="card orange lighten-4 center">
+        <div class="card-content black-text container">
               <h2 class="card-title">Sign up</h2>
               <form action="/signup" method="POST">
                 <input type="text" name="userName" placeholder="User Name">

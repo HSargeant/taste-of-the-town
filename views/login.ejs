@@ -1,13 +1,5 @@
 <main>
-    <nav>
-        <div class="nav-wrapper orange lighten-1">
-          <a href="#" class="brand-logo center ">Tastes of the Town</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/login">Login</a></li>
-            <li><a href="/signup">Signup</a></li>
-          </ul>
-        </div>
-      </nav>
+
 
 
     <% if (locals.messages.errors) { %>
@@ -22,7 +14,7 @@
     <% } %>
     <div class="container">
           <div class="card orange lighten-4 center">
-            <div class="card-content black-text">
+            <div class="card-content black-text container">
               <h2 class="card-title">Log in</h2>
               <form action="/login" method="POST">
                 <input type="email" name="email" placeholder="Email">
