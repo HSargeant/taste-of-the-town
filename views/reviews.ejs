@@ -1,6 +1,11 @@
 <main class="container">
   <h1><%=user.userName %>'s TOTT Reviews </h1>
-  <p>You have created <%= posts.length %> reviews. Thanks for sharing!</p>
+  <p>You have created <%= posts.length %> 
+    <% if(posts.length==1) { %>
+    review.
+  <% } else { %>  
+    reviews.
+ <% } %> Thanks for sharing!</p>
   <p>Feel free to add reviews or edit any reviews you have previously made.</p>     
   <%console.log(posts[0].userId)%>
   <%posts.forEach(post=>{ %>
