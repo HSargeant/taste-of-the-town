@@ -28,8 +28,11 @@ Array.from(todoItem).forEach((el)=>{
 Array.from(todoComplete).forEach((el)=>{
     el.addEventListener('click', markIncomplete)
 })
- 
+
+//added a "windowConfirm" variable to open a confirmation window for deleting. 
 async function deleteReview(){
+    let windowConfirm = confirm("Are you sure you want to delete this review?")
+    if (windowConfirm == true) {
     const review = this.parentNode.parentNode.parentNode.parentNode.dataset.id
         console.log(review)
  
@@ -47,7 +50,7 @@ async function deleteReview(){
     }catch(err){
         console.log(err)
     }
-}
+}}
  
 async function updateReview(){
     const review = document.querySelector('.edit').id
