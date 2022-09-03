@@ -7,7 +7,12 @@
         <label for="restaurant" class="black-text">Restaurant Name:</label>
         <input type="text" placeholder="" name='restaurant' value="<%=post.restaurant%>">
         <label for="country" class="black-text">Country:</label>
-        <input name="country" value="<%=post.country%>">
+            <select class='' name="country" id="country">
+                <option value=<%=post.country%> selected><%=post.country%></option>
+                <% for (let i = 0; i < countryData.length; i++) { %>
+                    <option value=<%= countryData[i].name.split(' ').join('-') %>><%= countryData[i].name %></option>
+                <% } %>
+            </select>
         <label for="state"class="black-text">State/Province/Region:</label>
         <input type="text" placeholder="State/Province/Region" name='state' value="<%=post.state%>">
         <label for="city"class="black-text">City:</label>
