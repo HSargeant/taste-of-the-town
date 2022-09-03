@@ -16,14 +16,12 @@
       <div class="card orange lighten-4">
         <div class="card-content black-text">
 
+          <a href="/users/<%=post.userId._id.toString()%>"><%=post.userId.userName%></a></p>
           <h2 class="card-title"><%=post.restaurant%></h2>
           <span>Location: <%=post.city%>, <%=post.state%> -- <%=post.country.split('-').join(' ')%></span>
           <h4 class="foodTypeSection">Type: <%=post.foodType%></h4>
           <span class="favDishSection">Favorite Dish: <%=post.favDish%></span>
-          <p class="commentSection">"<%=post.comment%>" <a href="/users/<%=post.userId._id.toString()%>"><%=post.userId.userName%></a></p>
-
-
-          <!-- <span>Reviewed by ADD USERNAME that matches the POST </span> -->
+          <p class="commentSection">"<%=post.comment%>" 
 
           <%if(user){%>
             <%if(post.userId._id==user._id.toString()){%>
