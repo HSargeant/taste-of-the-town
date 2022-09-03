@@ -21,11 +21,7 @@
                   <h4 class="foodTypeSection">Type: <%=post.foodType%></h4>
                   <span class="favDishSection">Favorite dish: <%=post.favDish%></span>
                   <p class="commentSection">"<%=post.comment%>"</p>
-                  <%if(post.userId._id.toString()==user._id.toString()){%>
-                    <a href="/reviews/<%=post._id%>" ><i class="fas fa-edit left edit"></i></a>
-                 <i class="fas fa-trash right delete"></i>
-                 
-                  <%}%>
+
                 </div>
   
               </div>
