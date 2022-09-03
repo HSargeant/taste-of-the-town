@@ -3,9 +3,9 @@ const countryList = require('country-list')
 
 module.exports = {
     getCheckins: async (req,res)=>{
-        // console.log(req.user)
         try{
             const posts = await Checkin.find({userId:req.user.id})
+            .populate('userId')
             res.render('reviews.ejs', {title: 'Tastes of the Town', posts: posts, user: req.user, countryData: countryList.getData()})
         }catch(err){
             console.log(err)
@@ -32,7 +32,6 @@ module.exports = {
         }
     },
     deleteCheckin: async (req, res)=>{
-        console.log(req.body.reviewId)
         try{
             await Checkin.findOneAndDelete({_id:req.body.reviewId})
             console.log('Deleted Checkin')
@@ -42,7 +41,6 @@ module.exports = {
         }
     },
     editCheckin: async (req,res)=>{
-        console.log(req.user.id,req.params.id)
 
         const review = await Checkin.findOne({
             _id: req.params.id
