@@ -1,14 +1,15 @@
 
 <main>
-  <%console.log(user)%>
-
 
     <p class='center message'>Welcome to Taste of the Town. Check out the reviews from others in your area or <a href="/signup">signup</a> up and start sharing your own great food finds!</p>
 
    
     <%# Each card will eventually be created to access the database and a card will be generated for every entry
     %>
+
+
 <%posts.forEach(post=>{ %>
+  <%console.log(post.userId.userName,"=============")%>
 
   <div class="row" data-id='<%=post._id%>'>
     <div class="col">
@@ -19,13 +20,13 @@
           <span>Location: <%=post.city%>, <%=post.state%> -- <%=post.country.split('-').join(' ')%></span>
           <h4 class="foodTypeSection">Type: <%=post.foodType%></h4>
           <span class="favDishSection">Favorite Dish: <%=post.favDish%></span>
-          <p class="commentSection">"<%=post.comment%>" <a href="/users/<%=post._id%>">Author</a></p>
+          <p class="commentSection">"<%=post.comment%>" <a href="/users/<%=post.userId._id.toString()%>"><%=post.userId.userName%></a></p>
 
 
           <!-- <span>Reviewed by ADD USERNAME that matches the POST </span> -->
 
           <%if(user){%>
-            <%if(post.userId==user._id){%>
+            <%if(post.userId._id==user._id.toString()){%>
               <a href="/reviews/<%=post._id%>"><i class="fas fa-edit left edit"></i></a>
               <i class="fas fa-trash right delete"></i>
               <%}%>

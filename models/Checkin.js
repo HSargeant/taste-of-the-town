@@ -33,9 +33,9 @@ const CheckinSchema = new mongoose.Schema({
     type: String
   },
   userId: {
-    type: String,
-    required: true
-  }
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User"
+  },
 })
 
 module.exports = mongoose.model('Checkin', CheckinSchema)
