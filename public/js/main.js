@@ -1,4 +1,5 @@
 const deleteBtn = document.querySelectorAll('.delete')
+const deleteBtn2 = document.querySelectorAll('.delete2')
 const todoItem = document.querySelectorAll('span.not')
 const todoComplete = document.querySelectorAll('span.completed')
 var formsSelect = document.querySelectorAll('select');
@@ -15,10 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   
- 
 
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteReview)
+})
+Array.from(deleteBtn2).forEach((el)=>{
+    el.addEventListener('click', deleteReview2)
 })
  
 Array.from(todoItem).forEach((el)=>{
@@ -32,8 +35,8 @@ Array.from(todoComplete).forEach((el)=>{
 //added a "windowConfirm" variable to open a confirmation window for deleting. 
 async function deleteReview(){
     let windowConfirm = confirm("Are you sure you want to delete this review?")
-    if (windowConfirm == true) {
-    const review = this.parentNode.parentNode.parentNode.parentNode.dataset.id
+    if (windowConfirm) {
+    const review = this.parentNode.parentNode.parentNode.parentNode.dataset.id || this.parentNode.parentNode.parentNode.parentNode.parentNode.dataset.id
         console.log(review)
  
     try{
