@@ -51,4 +51,11 @@
 
 <%}) %>
 
+<!--Added a floating button to add a review IF the user is logged in -->
+<%if(user){%>
+  <div class="fixed-action-btn">
+    <a id='addReviewButton'  class="btn-floating btn-large red accent-4"><i class="material-icons">add</i></a>
+  </div>
+  <%}%>
+    
 </main>
