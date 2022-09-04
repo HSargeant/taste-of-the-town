@@ -32,14 +32,14 @@
           <%}%>
           <h2><%=post.restaurant%></h2>
           <span>Location: <%=post.city%>, <%=post.state%> -- <%=post.country.split('-').join(' ')%></span>
-          <h4 class="foodTypeSection">Type: <%=post.foodType%></h4>
-          <span class="favDishSection">Favorite Dish: <%=post.favDish%></span>
-          <p class="commentSection">"<%=post.comment%>" 
+          <h4>Type: <%=post.foodType%></h4>
+          <span>Favorite Dish: <%=post.favDish%></span>
+          <p>"<%=post.comment%>" 
 
           <%if(user){%>
             <%if(post.userId._id==user._id.toString()){%>
-              <a href="/reviews/<%=post._id%>"><i class="fas fa-edit left edit"></i></a>
-              <i class="fas fa-trash right delete"></i>
+              <a href="/reviews/<%=post._id%>"><i class="fas fa-edit"></i></a>
+              <i class="fas fa-trash"></i>
               <%}%>
 
           <%}%>
@@ -53,8 +53,8 @@
 
 <!--Added a floating button to add a review IF the user is logged in -->
 <%if(user){%>
-  <div class="fixed-action-btn">
-    <a id='addReviewButton'  class="btn-floating btn-large red accent-4"><i class="material-icons">add</i></a>
+  <div>
+    <a><i>add</i></a>
   </div>
   <%}%>
     
