@@ -1,27 +1,27 @@
 <main class="container">
     <h3>Edit Your Review</h3>
     <%console.log(post._id)%>
-    <form class= "formReview black-text edit" action="/reviews/update" method='POST' id="<%=post._id%>">
+    <form action="/reviews/update" method='POST' id="<%=post._id%>">
         <input type="hidden" name="_method" value="PUT">
         <input type="hidden" name="_id" value="<%=post._id%>">
-        <label for="restaurant" class="black-text">Restaurant Name:</label>
+        <label for="restaurant" ">Restaurant Name:</label>
         <input type="text" placeholder="" name='restaurant' value="<%=post.restaurant%>" required>
-        <label for="country" class="black-text">Country:</label>
-            <select class='' name="country" id="country">
+        <label for="country">Country:</label>
+            <select name="country" id="country">
                 <option value=<%=post.country%> selected><%=post.country%></option>
                 <% for (let i = 0; i < countryData.length; i++) { %>
                     <option value=<%= countryData[i].name.split(' ').join('-') %>><%= countryData[i].name %></option>
                 <% } %>
             </select>
-        <label for="state"class="black-text">State/Province/Region:</label>
+        <label for="state">State/Province/Region:</label>
         <input type="text" placeholder="State/Province/Region" name='state' value="<%=post.state%>" required>
-        <label for="city"class="black-text">City:</label>
+        <label for="city">City:</label>
         <input type="text" placeholder="City" name='city' value="<%=post.city%>" required>
-        <label for="foodType"class="black-text">Type of Food:</label>
-        <input type="text" placeholder="" name='foodType' value="<%=post.foodType%>" required>
-        <label for="favDish"class="black-text">Favorite Dish:</label>
+        <label for="foodType">Type of Food:</label>
+        <input type="text" placeholder="Type of food" name='foodType' value="<%=post.foodType%>" required>
+        <label for="favDish">Favorite Dish:</label>
         <input type="text" name='favDish' value="<%=post.favDish%>" required>
-        <label for="comment"class="black-text">Comment:</label>
+        <label for="comment">Comment:</label>
         <input type="text" placeholder="Write a comment" name='comment' value="<%=post.comment%>" required>
         <select id="status" name="status" value="<%=post.status%>">
             <% if(post.status == "public"){ %>
