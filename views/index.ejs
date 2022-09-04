@@ -1,7 +1,11 @@
 
 <main>
-
+  <%if(user){%>
+    <p class='center message'>Welcome to Taste of the Town, <%=user.userName %>!</p>
+    <%}else{%>
     <p class='center message'>Welcome to Taste of the Town. Check out the reviews from others in your area or <a href="/signup">signup</a> up and start sharing your own great food finds!</p>
+    <%}%>
+   
 
    
     <%# Each card will eventually be created to access the database and a card will be generated for every entry
