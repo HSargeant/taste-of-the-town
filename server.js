@@ -12,6 +12,7 @@ const logger = require('morgan')
 const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const reviewsRoutes = require('./routes/reviews')
+const dashboardRoutes = require('./routes/dashboard')
 //see only user id ones
 //add a review
 //edit a review
@@ -62,6 +63,7 @@ app.use(flash())
   
 app.use('/', mainRoutes)
 app.use('/reviews', reviewsRoutes)
+app.use('/dashboard', dashboardRoutes)
  
 app.listen(process.env.PORT, ()=>{
     console.log(`running on port ${process.env.PORT}`)
