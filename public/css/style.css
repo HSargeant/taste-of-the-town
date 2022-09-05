@@ -1,10 +1,13 @@
-body {
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
     background-color: #FCFCFC;
     font-family: "Poppins", sans-serif;
 }
 
 .hero {
-    position: absolute;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -13,16 +16,19 @@ body {
     left: 0px;
     top: 63px;
     background-size: cover;
+    background-attachment: local;
+    background-position: center ;
     background-image: url("/heroimage.jpg");
+    border: 2px solid red;
 }
 
 .hero-title {
     font-family: 'Poppins';
+    border: 2px solid blue;
     font-style: normal;
     font-weight: 700;
     font-size: 11em;
     line-height: 13px;
-    /* or 10% */
     color: white;
     text-shadow: 12px 12px 10px rgba(0, 0, 0, 0.7);
 
@@ -30,38 +36,92 @@ body {
 
 h2 {
     font-family: 'IBM Plex Sans';
-font-style: normal;
-font-weight: 700;
-font-size: 40px;
-line-height: 13px;
-/* or 32% */
-
-align-items: center;
-
-color: #FFFFFF;
-
-border: 1px solid rgba(0, 0, 0, 0.1);
-text-shadow: 2px 4px 4px rgba(0, 0, 0, 1);
+    font-style: normal;
+    border: 2px solid purple;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 13px;
+    align-items: center;
+    color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 1);
 }
+
+.options {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 2px solid orange;
+    width: 100%;
+}
+
+.btn {
+    align-self: center;
+    width: 25%;
+    height: 3em;
+    background-color: black;
+    color: white;
+    font-family: 'IBM Plex Sans';
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    border-radius: 5px;
+}
+
+.btn:first-of-type{
+    margin-top: 2em;
+}
+
+
+.btn-white {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: .5em;
+    margin-bottom: 1em;
+}
+
+.options a {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    color: #2237A5;
+    text-decoration: none;
+    margin-bottom: 2em;
+
+}
+
+
+
+
+
+
+
+
+
+
+
 /** CAROUSEL FROM https://www.youtube.com/watch?v=XtFlpgaLbZ4 **/
 .carousel {
     display: block;
+    border: 2px solid green;
     position: relative;
-    height: 75px;
     width: 100%;
   }
   
   .carousel__item {
-    height: 75px;
+    height: 6em;
     background: #FFC700;
     padding: 1em;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    text-align: center;
+    font-size: 1.5em;
+    font-family: 'Poppins';
     font-style: italic;
-    border: 2px solid black;
-    font-size: 1em;
+    font-weight: 500;
     color: black;
+    display: none;
+    text-align: center;
   }
   
   .carousel__item--selected {
@@ -81,7 +141,7 @@ text-shadow: 2px 4px 4px rgba(0, 0, 0, 1);
     width: 10px;
     height: 10px;
     display: inline-block;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 50%;
     margin: 0 5px;
     cursor: pointer;
