@@ -233,10 +233,40 @@ margin: 0 0;
   margin-left: 2em;
 }
 
-.reviews-template {
+.template {
+  border: 2px solid black;
   margin-left: 2em;
 }
 
+.template-top {
+  border: 4px solid fuchsia;
+  display: flex;
+  font-size: 20px;
+}
+.template-userimage {
+  border: 2px solid green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.template-info {
+  border: 2px solid red;
+}
+
+.template-info-user {
+  margin: 0 0;
+}
+.template-info-restaurant {
+  margin: 0 0;
+}
+.template-info-location {
+  margin: 0 0;
+}
+
+.template-comment {
+  border: 2px solid blue;
+}
 
   /*********************FOOTER*************************/
 

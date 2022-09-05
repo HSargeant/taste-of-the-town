@@ -12,6 +12,7 @@
    </div>
    <a class="TOTRbanner-item" href="/" >TOTR</a>
   </section>
+
   <!--reviews from only currently logged in user -->
   <section class="reviews">
   <div>
@@ -19,18 +20,16 @@
   </div>
   <%posts.forEach(post=>{ %>
         <div class="template" data-id='<%=post._id%>'>
+          <div class="template-top">
               <div class="template-userimage">
                 <img src="userstandin.jpg">
               </div>
               <div class="template-info">
-                <span><%=post.userName%></span>
-
-
-
-                
-                <h2><%=post.restaurant%></h2>
-                <span>Location: <%=post.city%>, <%=post.state%> -- <%=post.country.split('-').join(' ')%></span>
+                <span class="template-info_user">Username</span>
+                <h2 class="template-info_restaurant"><%=post.restaurant%></h2>
+                <span class="template-info_location"><%=post.city.toUpperCase()%>, <%=post.state.toUpperCase()%> -- <%=post.country.split('-').join(' ').toUpperCase()%></span>
               </div>
+          </div>
               <div class="template-comment">
                 <p>"<%=post.comment%>"</p>
               </div>
