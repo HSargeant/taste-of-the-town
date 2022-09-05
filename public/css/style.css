@@ -6,6 +6,14 @@ body {
     background-color: #FCFCFC;
     font-family: "Poppins", sans-serif;
 }
+
+a {
+    text-decoration: none;
+    color: white;
+
+}
+
+/*****************HEADER*************************/
 .nav-list {
     background: black;
     margin: 0 0;
@@ -36,28 +44,7 @@ body {
     font-size: 40px;
     font-weight: 700;
   }
-
-/*
-nav {
-    height: 4.5em;
-    display: flex;
-    background-color: black;
-    color: white;
-    font-family: 'Poppins';
-}
-
-a {
-	text-decoration: none;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-*/
-
-
+/*****************START MAIN*************************/
 .hero {
     display: flex;
     flex-direction: column;
@@ -197,3 +184,20 @@ h2 {
     background: rgba(255, 255, 255, 0.5);
   }
   
+  /*********************FOOTER*************************/
+
+  #footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    color: white;
+    font-weight: 600;
+    padding: .8em 0;
+  }
+
+  #footer div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
