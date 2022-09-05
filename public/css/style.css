@@ -62,6 +62,18 @@ h1{
 .login-container {
     width: 300px;
 }
+.login-window{
+    align-self: center;
+    background-color: #fafafa;
+    border: 1px none;
+    border-radius: 10px;
+    box-shadow: 12px 12px 12px #00000014;
+    max-height: 606px;
+    padding: 39.4px 66px;
+    width: 559px;
+    top: 200px;
+    margin-top: 50px;
+}
 
 .main-login-signup {
     padding-top: 100px;
@@ -127,4 +139,9 @@ ul.dropdown-content.select-dropdown li span {
 .nav-wrapper{
     padding: 0 25px;
 
+}
+
+.authBtn{
+   background-color: #FFC700 !important;
+   color: black;
 }
