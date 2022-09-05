@@ -19,12 +19,10 @@
     background-attachment: local;
     background-position: center ;
     background-image: url("/heroimage.jpg");
-    border: 2px solid red;
 }
 
 .hero-title {
     font-family: 'Poppins';
-    border: 2px solid blue;
     font-style: normal;
     font-weight: 700;
     font-size: 11em;
@@ -37,7 +35,6 @@
 h2 {
     font-family: 'IBM Plex Sans';
     font-style: normal;
-    border: 2px solid purple;
     font-weight: 700;
     font-size: 40px;
     line-height: 13px;
@@ -51,7 +48,6 @@ h2 {
     display: flex;
     flex-direction: column;
     text-align: center;
-    border: 2px solid orange;
     width: 100%;
 }
 
@@ -106,7 +102,6 @@ h2 {
 /** CAROUSEL FROM https://www.youtube.com/watch?v=XtFlpgaLbZ4 **/
 .carousel {
     display: block;
-    border: 2px solid green;
     position: relative;
     width: 100%;
   }
