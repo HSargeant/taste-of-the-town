@@ -1,61 +1,21 @@
-
 <main>
-  <%if(user){%>
-    <p>Welcome to Taste of the Town, <%=user.userName %>!</p>
-    <%}else{%>
-    <p>Welcome to Taste of the Town. Check out the reviews from others in your area or <a href="/signup">signup</a> up and start sharing your own great food finds!</p>
-    <%}%>
-   
-
-   
-    <%# Each card will eventually be created to access the database and a card will be generated for every entry
-    %>
-
-
-<%posts.forEach(post=>{ %>
-  <%console.log(post.userId.userName,"=============")%>
-
-  <div data-id='<%=post._id%>'>
+  <section class="hero">
     <div>
-      <div>
-        <div>
-          <%if(user){%>
-            <%if(post.userId._id==user._id.toString()){%>
-              <a href="/reviews/"><%=post.userId.userName%> </a>
-
-              <%}else{%>
-                <a href="/reviews/user/<%=post.userId._id.toString()%>"><%=post.userId.userName%></a>
-                <%}%>
-
-            <%}else{%>
-          <a href="/reviews/user/<%=post.userId._id.toString()%>"><%=post.userId.userName%></a>
-          <%}%>
-          <h2><%=post.restaurant%></h2>
-          <span>Location: <%=post.city%>, <%=post.state%> -- <%=post.country.split('-').join(' ')%></span>
-          <h4>Type: <%=post.foodType%></h4>
-          <span>Favorite Dish: <%=post.favDish%></span>
-          <p>"<%=post.comment%>" 
-
-          <%if(user){%>
-            <%if(post.userId._id==user._id.toString()){%>
-              <a href="/reviews/<%=post._id%>"><i class="fas fa-edit"></i></a>
-              <i class="fas fa-trash"></i>
-              <%}%>
-
-          <%}%>
-          
-        </div>
-      </div>
+      <h1 class="hero-title">TOTR</h1>
     </div>
+    <div>
+    <h2>Taste of the Town Reviews</h2>
+    </div>
+  </section>
+  <div class="carousel">
+      <div class="carousel__item"><p>Discover new things to taste in YOUR town.</p></div>
+      <div class="carousel__item"><p>Keep public and private notes on the restaurants you have tried.</p></div>
+      <div class="carousel__item"><p>Read and write reviews without the annoying photos.</p></div>
   </div>
+  <section>
+    <button class="login">login</button>
+    <button class="signup">sign Up</button>
+    <a href='#'>READ REVIEWS</a>
+  </section>
 
-<%}) %>
-
-<!--Added a floating button to add a review IF the user is logged in -->
-<%if(user){%>
-  <div>
-    <a><i>add</i></a>
-  </div>
-  <%}%>
-    
 </main>
