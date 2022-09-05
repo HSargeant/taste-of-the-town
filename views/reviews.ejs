@@ -1,21 +1,38 @@
 <main>
-  <h1><%=user.userName %>'s TOTT Reviews </h1>
-  <p>You have created <%= posts.length %> 
-    <% if(posts.length==1) { %>
-    review.
-  <% } else { %>  
-    reviews.
- <% } %> Thanks for sharing!</p>
-  <p>Feel free to add reviews or edit any reviews you have previously made.</p>     
-  <%console.log(posts[0])%>
+  <!--banner with user data-->
+  <section class="TOTRbanner">
+    <div class="TOTRbanner-item"> 
+        <h2>Welcome <b><%=user.userName %></b>!!</h2>
+        <p>You've shared <b><%= posts.length %></b>
+          <% if(posts.length==1) { %>
+          review.
+        <% } else { %>  
+          reviews.
+        <% } %></p>
+   </div>
+   <a class="TOTRbanner-item" href="/" >TOTR</a>
+  </section>
+  <!--reviews from only currently logged in user -->
+  <section class="reviews">
+  <div>
+    <h3>your reviews:</h3>
+  </div>
   <%posts.forEach(post=>{ %>
-        <div data-id='<%=post._id%>'>
-                <!-- <span>we need to add the username of the poster here!</span> -->
+        <div class="template" data-id='<%=post._id%>'>
+              <div class="template-userimage">
+                <img src="userstandin.jpg">
+              </div>
+              <div class="template-info">
+                <span><%=post.userName%></span>
                 <h2><%=post.restaurant%></h2>
                 <span>Location: <%=post.city%>, <%=post.state%> -- <%=post.country.split('-').join(' ')%></span>
-                <h4>Type: <%=post.foodType%></h4>
-                <span>Favorite dish: <%=post.favDish%></span>
+              </div>
+              <div class="template-comment">
                 <p>"<%=post.comment%>"</p>
+              </div>
+               <!--Unused info 
+                <h4>Type: <%=post.foodType%></h4>
+                <span>Favorite dish: <%=post.favDish%></span>-->
                 <%if(user._Id==post.UserId){%>
                   <a href="/reviews/<%=post._id%>" ><i class="fas fa-edit edit"></i></a>
                <i class="fas fa-trash delete"></i>
@@ -27,5 +44,5 @@
 
 
 
-    
+  </section>
 </main>
