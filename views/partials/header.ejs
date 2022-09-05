@@ -1,18 +1,29 @@
 <header>
     <nav>
-        <a href="#">Taste Of The Town</a>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <%if(user){%>
-                <li><a href="/reviews">Your Reviews</a></li>
-                <li><a data-target="modal1" class="modal-trigger">Add a Review</a></li>
-                <li> <a href="/logout">Logout</a></li>
-            <%}else{ %>
-                <li><a href="/login">Login</a></li>
-                <li><a href="/signup">Signup</a></li>
-            <%}%>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="/">TOTR</a>
+          </li>
+          <%if(user){%>
+            <li class="nav-item">
+                <a href="/reviews">All Reviews</a>
+            </li>
+            <li class="nav-item">
+                <a href="/user/:id">Your Reviews</a>
+            </li>
+            <li class="nav-item">
+                <a href="/logout">Logout</a>
+            </li>
+        <%}else{ %>
+            <li class="nav-item">
+                <a href="/login">Login</a>
+            </li>
+            <li class="nav-item">
+                <a href="/signup">Signup</a>
+            </li>
+        <%}%>
         </ul>
-    </nav>
+      </nav>
   </header>
 
   <!-- Modal for future addition
