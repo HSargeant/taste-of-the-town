@@ -36,7 +36,7 @@ Array.from(todoComplete).forEach((el)=>{
 async function deleteReview(){
     let windowConfirm = confirm("Are you sure you want to delete this review?")
     if (windowConfirm) {
-    const review = this.parentNode.parentNode.parentNode.parentNode.dataset.id || this.parentNode.parentNode.parentNode.parentNode.parentNode.dataset.id
+    const review = this.parentNode.parentNode.parentNode.parentNode.dataset.id.trim() || this.parentNode.parentNode.parentNode.parentNode.parentNode.dataset.id.trim()
         console.log(review)
  
     try{
