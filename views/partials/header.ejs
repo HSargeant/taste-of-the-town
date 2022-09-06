@@ -39,7 +39,7 @@
                     <option value=<%= countryData[i].name.split(' ').join('-') %>><%= countryData[i].name %></option>
                 <% } %>
                 </select> -->
-                <input name="country" tabindex="2" type="text" maxlength="15" class="autocomplete validate" id="autocomplete-input" required>
+                <input name="country" tabindex="2" type="text" class="autocomplete validate" id="autocomplete-input" required>
                 <label for="autocomplete-input">Country</label>
             </div>
             <div class="col s4 input-field">
@@ -47,7 +47,7 @@
                 <label for="state-modal">State/Province/Region</label>
             </div>
             <div class="col s4 input-field">
-                <input tabindex="4" class="validate" type="text" maxlength="15" name='city' id="city-modal" required>
+                <input tabindex="4" class="validate" type="text" maxlength="18" name='city' id="city-modal" required>
                 <label for="city-modal">City</label>
             </div>
         </div>

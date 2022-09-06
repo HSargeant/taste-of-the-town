@@ -5,7 +5,7 @@
         <input type="hidden" name="_method" value="PUT">
         <input type="hidden" name="_id" value="<%=post._id%>">
         <label for="restaurant" class="black-text">Restaurant Name:</label>
-        <input type="text" placeholder="" name='restaurant' value="<%=post.restaurant%>" required>
+        <input type="text" placeholder="" name='restaurant' maxlength="30" value="<%=post.restaurant%>" required>
         <label for="country" class="black-text">Country:</label>
             <select class='' name="country" id="country">
                 <option value=<%=post.country%> selected><%=post.country%></option>
@@ -14,15 +14,15 @@
                 <% } %>
             </select>
         <label for="state"class="black-text">State/Province/Region:</label>
-        <input type="text" placeholder="State/Province/Region" name='state' value="<%=post.state%>" required>
+        <input type="text" placeholder="State/Province/Region" name='state' maxlength="20"  value="<%=post.state%>" required>
         <label for="city"class="black-text">City:</label>
-        <input type="text" placeholder="City" name='city' value="<%=post.city%>" required>
+        <input type="text" placeholder="City" name='city' maxlength="28" value="<%=post.city%>" required>
         <label for="foodType"class="black-text">Type of Food:</label>
-        <input type="text" placeholder="" name='foodType' value="<%=post.foodType%>" required>
+        <input type="text" placeholder="" name='foodType' maxlength="25"  value="<%=post.foodType%>" required>
         <label for="favDish"class="black-text">Favorite Dish:</label>
-        <input type="text" name='favDish' value="<%=post.favDish%>" required>
+        <input type="text" name='favDish' maxlength="25" value="<%=post.favDish%>" required>
         <label for="comment"class="black-text">Comment:</label>
-        <input type="text" placeholder="Write a comment" name='comment' value="<%=post.comment%>" required>
+        <input type="text" placeholder="Write a comment" name='comment' maxlength="200" value="<%=post.comment%>" required>
         <select id="status" name="status" value="<%=post.status%>">
             <% if(post.status == "public"){ %>
                 <option value="public" selected>Public</option>
