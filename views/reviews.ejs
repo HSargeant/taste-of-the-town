@@ -15,8 +15,6 @@
 
           <%posts.forEach(post=>{ %>
                 <div class="review-card" data-id='<%=post._id%>'>
-            <%console.log(post.userId.userName)%>
-
       <!--user icon -->
                 <i class="fa-solid fa-circle-user"></i>
               <!-- information -->
@@ -24,13 +22,18 @@
                 <span class="template-info_user">
                   <!--get username-->
                   <%if(user){%>
+
                     <%if(post.userId._id==user._id.toString()){%>
                       <span class="template-info_username"><a href="/dashboard"><%=post.userId.userName%></a></span>
         
-                      <% } else { %>
+                    <% } else { %>
                         <span class="template-info_username"><a href="/reviews/user/<%=post.userId._id.toString()%>"><%=post.userId.userName%></a></span>
                         <%}%>
-                    <%}%>
+
+                  <%}else{%>
+                    <span class="template-info_username"><a href="/reviews/user/<%=post.userId._id.toString()%>"><%=post.userId.userName%></a></span>
+
+                  <%}%>
                 </span>
                 <h2 class="template-info_restaurant"><%=post.restaurant%></h2>
                 <span class="template-info_location"><%=post.city.toUpperCase()%>, <%=post.state.toUpperCase()%> -- <%=post.country.split('-').join(' ').toUpperCase()%></span>

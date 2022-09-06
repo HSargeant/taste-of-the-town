@@ -12,7 +12,6 @@
    <section class="reviews wrapper">
   
       <%posts.forEach(post=>{ %>
-          <%console.log(post.userId)%>
   
             <div class="review-card" data-id='<%=post._id%>'>        
               <i class="fa-solid fa-circle-user"></i>
@@ -36,16 +35,13 @@
                     <span class="template-info_user">Favorite dish: <%=post.favDish%></span>
                       </div>
                     <p class="template-comment">"<%=post.comment%>"</p>
-                    <%if(user._id.toString()==post.userId._id.toString()){%>
-                      <a href="/reviews/<%=post._id%>" ><i class="fas fa-edit edit"></i></a>
-                   <i class="fas fa-trash delete"></i>
-                   
-                    <%}%>
             </div>
             
           <%}) %>
     
     </section>
-    <i id="addReview" class="fa-solid fa-circle-plus"></i>
-    <% console.log('filtered is the value ' + filtered) %>
+    <%if(user){%>
+        <i id="addReview" class="fa-solid fa-circle-plus"></i>
+
+    <%}%>
     </main>
