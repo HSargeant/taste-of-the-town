@@ -309,6 +309,11 @@ h2.template-info_restaurant {
   margin: .2rem 0;
 }
 
+.template-info_username a {
+  color:#2237A5;
+  font-weight: 700;
+}
+
 .template-comment {
   font-weight: 400;
   font-size: 1rem;
