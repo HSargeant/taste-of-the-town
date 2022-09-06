@@ -26,7 +26,7 @@ a {
     background: black;
     margin: 0 0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
     box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4)
   }
@@ -46,9 +46,9 @@ a {
     color: #FFC700;
   }
 
-  
+  /* with margin-right you can unsquish the links of the nav.*/
   .nav-item:first-child {
-    margin-right: auto;
+    margin-right: 20em;
     margin-left: 1rem;
     font-size: 40px;
     font-weight: 700;
