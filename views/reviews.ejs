@@ -1,12 +1,12 @@
 <main>
   <!--banner with user data-->
   <section class="TOTRbanner">
-    <div class="TOTRbanner-item"> 
+      <h1 class="TOTRbanner-item">ALL RECENT REVIEWS</h1>
       <%if(user){%>
         <h2>Welcome <b><%=user.userName %></b>!!</h2>
-      <%}%>
-   </div>
-   <a class="TOTRbanner-item">ALL RECENT REVIEWS</a>
+      <%} else { %>
+        <h2>Join us in the <b>TOTRverse</b>. <a href='/signup'><b>SIGN UP HERE</a>!</b></h2>
+        <% } %>
   </section>
 
 
