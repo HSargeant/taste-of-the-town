@@ -5,6 +5,7 @@
    </div>
    <a class="TOTRbanner-item">YOUR REVIEW DASHBOARD</a>
   </section>
+
   <h3 class="page-title">You have created <%=posts.length %> 
     <% if(posts.length==1) { %>
     review.
@@ -12,25 +13,30 @@
     reviews.
  <% } %></h3>
   
-   
+ <section class="reviews wrapper">
+
     <%posts.forEach(post=>{ %>
         <%console.log(post.userId)%>
 
-          <div data-id='<%=post._id%>'>        
-                  
+          <div class="review-card" data-id='<%=post._id%>'>        
+            <i class="fa-solid fa-circle-user"></i>
+            <div class="template-info">
         
-                  <h2><%=post.restaurant%></h2>
-                  <span>Location: <%=post.city%>, <%=post.state%> -- <%=post.country.split('-').join(' ')%></span>
+                  <h2 class="template-info_restaurant"><%=post.restaurant%></h2>
+                  <span class="template-info_location">Location: <%=post.city%>, <%=post.state%> -- <%=post.country.split('-').join(' ')%></span>
                   <h4>Type: <%=post.foodType%></h4>
                   <span>Favorite dish: <%=post.favDish%></span>
-                  <p>"<%=post.comment%>"</p>
+                    </div>
+                  <p class="template-comment">"<%=post.comment%>"</p>
+                  <%if(user._id.toString()==post.userId._id.toString()){%>
+                    <a href="/reviews/<%=post._id%>" ><i class="fas fa-edit edit"></i></a>
+                 <i class="fas fa-trash delete"></i>
+                 
+                  <%}%>
           </div>
-            
-    
-        
+          
         <%}) %>
   
-  
-  
-      
+  </section>
+  <i id="addReview" class="fa-solid fa-circle-plus"></i>
   </main>

@@ -74,21 +74,21 @@ a {
 font-family: 'IBM Plex Sans';
 color: black;
 font-weight: 500;
-font-size: 40px;
+font-size: 20px;
 margin: 0 0;
 }
 
 .TOTRbanner p {
   font-family: 'IBM Plex Sans';
   font-size: 25px;
-  margin: 0 0;
+
+
 }
 .TOTRbanner-item:last-child {
-  margin-left: auto;
-  margin-right: .5em;
-  font-size: 90px;
+  font-size: 2em;
   font-weight: 700;
-  color:black;
+  color:black;  
+  margin: 20% 20%;
 }
 
 
