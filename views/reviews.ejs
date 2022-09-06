@@ -1,15 +1,16 @@
-<main class="main">
+<main>
   <!--banner with user data-->
   <section class="TOTRbanner">
     <div class="TOTRbanner-item"> 
+      <%if(user){%>
         <h2>Welcome <b><%=user.userName %></b>!!</h2>
+      <%}%>
    </div>
-   <a class="TOTRbanner-item" href="/" >TOTR</a>
+   <a class="TOTRbanner-item">ALL RECENT REVIEWS</a>
   </section>
 
 
-  <!--reviews from only currently logged in user -->git
-  <h3 class="page-title">your reviews:</h3>
+  <h3 class="page-title">Check out what's good!</h3>
   <section class="reviews wrapper">
 
   <%posts.forEach(post=>{ %>
@@ -22,24 +23,124 @@
                 <span class="template-info_user">Username</span>
                 <h2 class="template-info_restaurant"><%=post.restaurant%></h2>
                 <span class="template-info_location"><%=post.city.toUpperCase()%>, <%=post.state.toUpperCase()%> -- <%=post.country.split('-').join(' ').toUpperCase()%></span>
+                <h4 class="template-info_type">Type: <%=post.foodType%></h4>
+                  <span class="template-info_user">Favorite dish: <%=post.favDish%></span>
               </div>
           <!-- </div> -->
                 <p class="template-comment">"<%=post.comment%>"</p>
               
-               <!--Unused info 
-                <h4>Type: <%=post.foodType%></h4>
-                <span>Favorite dish: <%=post.favDish%></span>-->
-                <%if(user._id.toString()==post.userId._id.toString()){%>
-                  <a href="/reviews/<%=post._id%>" ><i class="fas fa-edit edit"></i></a>
-               <i class="fas fa-trash delete"></i>
-               
-                <%}%>
+                <%if(user){%>
+
+                  <%if(user._id.toString()==post.userId._id.toString()){%>
+                    <a href="/reviews/<%=post._id%>" ><i class="fas fa-edit edit"></i></a>
+                 <i class="fas fa-trash delete"></i>
+                 
+                  <%}%>
+
+               <% }%>
+        
               </div>
       
       <%}) %>
 
-
-
   </section>
-  <i id="addReview" class="fa-solid fa-circle-plus"></i>
+  <!-- Modal for add review -->
+<section id="modalReview" class="wrapper modalFloat">
+      <section class="modalBody">
+        <h3>Write A Review</h3>
+                        <!-- tab index doesn't work on select -->
+           <form class="modalForm"action="/reviews/createCheckin" method='POST' id="submitForm">
+            <ul>
+              <li>
+                <label for="restaurant-modal">Restaurant Name</label>
+                <input tabindex="1" class="validate" type="text" name='restaurant' id="restaurant-modal">
+              </li> 
+              <li>
+                <label for="autocomplete-input">Country</label>
+                <input name="country" tabindex="2" type="text" class="autocomplete validate" id="autocomplete-input" required>
+              </li> 
+              <li>
+                <label for="state-modal">State/Province/Region</label>
+                <input tabindex="3" class="validate" type="text" name='state' id="state-modal" required>
+              </li> 
+              <li>
+                <label for="city-modal">City</label>
+                <input tabindex="4" class="validate" type="text" name='city' id="city-modal" required>
+              </li> 
+              <li>
+                <label for="foodType-modal">Type of Food</label>  
+                <input tabindex="5" class="validate" type="text" name='foodType' id="foodType-modal" required>
+              </li>
+              <li>
+                <label for="favDish-modal">Favorite Dish</label>
+                <input tabindex="6" class="validate" type="text" name='favDish' id="favDish-modal" required>
+              </li> 
+              <li>
+                <label for="comment-modal">Comment</label>
+                <textarea tabindex="7" class="validate" type="text" name='comment' id="comment-modal" placeholder="Tell us about the restaurant!"required></textarea>
+              </li> 
+              <li>
+                <select tabindex="8" class="validate" id="status" name="status">
+                    <option value="public" selected>Public (all visitors can see this review)</option>
+                    <option value="private">Private (only you can see this review)</option>
+                </select>
+              </li> 
+              <li>
+                <button class= "sub-btn" type="submit" name="action">Submit</button>
+              </li> 
+  
+          </ul>
+       </form>
+      </section>
+   </section>
+   <!-- Modal for Edit -->
+<section id="modalEdit" class="wrapper modalFloat">
+  <section class="modalBody">
+    <h3>Edit Review</h3>
+                    <!-- tab index doesn't work on select -->
+       <form class="modalForm"action="/reviews/createCheckin" method='POST' id="submitForm">
+        <ul>
+          <li>
+            <label for="restaurant-modal">Restaurant Name</label>
+            <input tabindex="1" class="validate" type="text" name='restaurant' id="restaurant-modal">
+          </li> 
+          <li>
+            <label for="autocomplete-input">Country</label>
+            <input name="country" tabindex="2" type="text" class="autocomplete validate" id="autocomplete-input" required>
+          </li> 
+          <li>
+            <label for="state-modal">State/Province/Region</label>
+            <input tabindex="3" class="validate" type="text" name='state' id="state-modal" required>
+          </li> 
+          <li>
+            <label for="city-modal">City</label>
+            <input tabindex="4" class="validate" type="text" name='city' id="city-modal" required>
+          </li> 
+          <li>
+            <label for="foodType-modal">Type of Food</label>  
+            <input tabindex="5" class="validate" type="text" name='foodType' id="foodType-modal" required>
+          </li>
+          <li>
+            <label for="favDish-modal">Favorite Dish</label>
+            <input tabindex="6" class="validate" type="text" name='favDish' id="favDish-modal" required>
+          </li> 
+          <li>
+            <label for="comment-modal">Comment</label>
+            <textarea tabindex="7" class="validate" type="text" name='comment' id="comment-modal" placeholder="Tell us about the restaurant!"required></textarea>
+          </li> 
+          <li>
+            <select tabindex="8" class="validate" id="status" name="status">
+                <option value="public" selected>Public (all visitors can see this review)</option>
+                <option value="private">Private (only you can see this review)</option>
+            </select>
+          </li> 
+          <li>
+            <button class= "sub-btn" type="submit" name="action">Submit</button>
+          </li> 
+
+      </ul>
+   </form>
+  </section>
+</section>
+<i id="addReview" class="addReview fa-solid fa-circle-plus"></i>
 </main>

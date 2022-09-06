@@ -1,94 +1,108 @@
 * {
-    box-sizing: border-box;
-  }
-  
+  box-sizing: border-box;
+}
+
 body {
-    background-color: #FCFCFC;
-    font-family: "Poppins", sans-serif;
+  background-color: #FCFCFC;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
 }
 
 a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 
+}
+
+ul {
+padding-inline-start: 0;
 }
 
 .page-title{
-  width: 70%;
-  margin: 2rem auto;
-  font-size: 2rem;
-  font-family: "IBM Plex Sans";
-  font-weight: 600;
+width: 70%;
+margin: 2rem auto;
+font-size: 2rem;
+font-family: "IBM Plex Sans";
+font-weight: 600;
 }
 
 /*****************HEADER*************************/
-.nav-list {
-    background: black;
-    margin: 0 0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4)
-  }
-  
-  .nav-item {
-    list-style: none;
-    margin-right: 2rem;
-  }
-  
-  .nav-item a {
-    text-decoration: none;
-    color: white;
-    transition: all 200ms ease-in;
-  }
-  
-  .nav-item a:hover {
-    color: #FFC700;
-  }
+header {
+background-color: black;
+}
 
-  
-  .nav-item:first-child {
-    margin-right: auto;
-    margin-left: 1rem;
-    font-size: 40px;
-    font-weight: 700;
-  }
+nav {
+/* display: flex;
+flex-direction: row;
+margin: 0; */
+}
+
+.nav-list {
+  background: black;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4)
+}
+
+.nav-item {
+  list-style: none;
+  margin-right: 2rem;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: white;
+  transition: all 200ms ease-in;
+}
+
+.nav-item a:hover {
+  color: #FFC700;
+}
+
+/* with margin-right you can unsquish the links of the nav.*/
+.nav-item:first-child {
+  margin-right: auto;
+  font-size: 40px;
+  font-weight: 700;
+}
 
 /*********************TOTR YELLOW BANNER**********************/
 .TOTRbanner {
-    background: #FFC700;
-    height: 8em;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    font-weight: 500;
-    line-height: 45px;
-    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4)
+  background: #FFC700;
+  height: 8em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: 500;
+  line-height: 45px;
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4)
 }
 
 .TOTRbanner-item {
-  margin: 0 2em 0 3em;
+margin: 0 2em 0 3em;
 }
 
 .TOTRbanner h2 {
 font-family: 'IBM Plex Sans';
 color: black;
 font-weight: 500;
-font-size: 40px;
+font-size: 20px;
 margin: 0 0;
 }
 
 .TOTRbanner p {
-  font-family: 'IBM Plex Sans';
-  font-size: 25px;
-  margin: 0 0;
+font-family: 'IBM Plex Sans';
+font-size: 25px;
+
+
 }
 .TOTRbanner-item:last-child {
-  margin-left: auto;
-  margin-right: .5em;
-  font-size: 90px;
-  font-weight: 700;
-  color:black;
+font-size: 2em;
+font-weight: 700;
+color:black;  
+margin: 20% 20%;
 }
 
 
@@ -96,83 +110,83 @@ margin: 0 0;
 
 /*****************START MAIN*************************/
 .hero {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    height: 485px;
-    left: 0px;
-    top: 63px;
-    background-size: cover;
-    background-attachment: local;
-    background-position: center ;
-    background-image: url("/heroimage.jpg");
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  height: 485px;
+  left: 0px;
+  top: 63px;
+  background-size: cover;
+  background-attachment: local;
+  background-position: center ;
+  background-image: url("/heroimage.jpg");
 }
 
 .hero-title {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 11em;
-    line-height: 13px;
-    color: white;
-    text-shadow: 12px 12px 10px rgba(0, 0, 0, 0.7);
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 11em;
+  line-height: 13px;
+  color: white;
+  text-shadow: 12px 12px 10px rgba(0, 0, 0, 0.7);
 
 }
 
 .hero-tagline {
-    font-family: 'IBM Plex Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 13px;
-    align-items: center;
-    color: #FFFFFF;
-    text-shadow: 2px 4px 4px rgba(0, 0, 0, 1);
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 13px;
+  align-items: center;
+  color: #FFFFFF;
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 1);
 }
 
 .options {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
 }
 
 .btn {
-    align-self: center;
-    width: 30%;
-    height: 2.8em;
-    background-color: black;
-    color: white;
-    font-family: 'IBM Plex Sans';
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 48px;
-    border-radius: 5px;
+  align-self: center;
+  width: 30%;
+  height: 2.8em;
+  background-color: black;
+  color: white;
+  font-family: 'IBM Plex Sans';
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+  border-radius: 5px;
 }
 
 .btn:first-of-type{
-    margin-top: 2em;
+  margin-top: 2em;
 }
 
 
 .btn-white {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-    border-radius: 5px;
-    margin-top: .5em;
-    margin-bottom: 1em;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: .5em;
+  margin-bottom: 1em;
 }
 
 .options a {
-    font-family: 'Poppins';
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 150%;
-    color: #2237A5;
-    text-decoration: none;
-    margin-bottom: 2em;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 150%;
+  color: #2237A5;
+  text-decoration: none;
+  margin-bottom: 2em;
 
 }
 
@@ -188,228 +202,318 @@ margin: 0 0;
 
 /** CAROUSEL FROM https://www.youtube.com/watch?v=XtFlpgaLbZ4 **/
 .carousel {
-    display: block;
-    position: relative;
-    width: 100%;
-  }
-  
-  .carousel__item {
-    height: 6em;
-    background: #FFC700;
-    padding: 1em;
-    font-size: 1.5em;
-    font-family: 'Poppins';
-    font-style: italic;
-    font-weight: 500;
-    color: black;
-    display: none;
-    text-align: center;
-  }
-  
-  .carousel__item--selected {
-    display: block;
-  }
-  
-  .carousel__nav {
-    width: 100%;
-    padding: 20px 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    text-align: center;
-  }
-  
-  .carousel__button {
-    width: 10px;
-    height: 10px;
-    display: inline-block;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-  }
-  
-  .carousel__button--selected {
-    background: rgba(255, 255, 255, 0.5);
-  }
-  
-  /*********************REVIEWS************************/
-  .wrapper {
-    align-items: center;
-    max-width: 600px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
+  display: block;
+  position: relative;
+  width: 100%;
 }
+
+.carousel__item {
+  height: 6em;
+  background: #FFC700;
+  padding: 1em;
+  font-size: 1.5em;
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 500;
+  color: black;
+  display: none;
+  text-align: center;
+}
+
+.carousel__item--selected {
+  display: block;
+}
+
+.carousel__nav {
+  width: 100%;
+  padding: 20px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.carousel__button {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.carousel__button--selected {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/*********************REVIEWS************************/
 
 .main{
   background-color: #FCFCFC;
 }
 
-.reviews {
-  font-family: 'IBM Plex Sans';
-  font-weight: 300;
-  /* font-size: 40px; */
-  /* margin-left: 2em; */
+.wrapper {
+  align-items: center;
+  max-width: 600px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
+
+.reviews {
+font-family: 'IBM Plex Sans';
+font-weight: 300;
+/* font-size: 40px; */
+/* margin-left: 2em; */
+}
+
 .reviews.wrapper h3 {
-  width: 100%;
+width: 100%;
 }
 
 
 /* previously .template */
 .review-card {  
-  background: #FFFFFF;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  gap: 2%;
-  width: 100%;
-  margin-bottom: 1rem;
-  box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  padding: 2%;
+background: #FFFFFF;
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+align-items: center;
+gap: 2%;
+width: 100%;
+margin-bottom: 1rem;
+box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+padding: 2%;
 }
 
 /* .template-top {
-  display: flex;
-  font-size: 20px;
+display: flex;
+font-size: 20px;
 } */
 
 .fa-solid.fa-circle-user::before{
-  color: #FFC700;
-  font-size: 4rem;
+color: #FFC700;
+font-size: 4rem;
 }
 .fas.fa-edit.edit::before{
-  color: black;
+color: black;
 }
 
 .template-info-user {
-  margin: 0 0;
-  font-family: 'IBM Plex Sans';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 1rem;
+margin: 0 0;
+font-family: 'IBM Plex Sans';
+font-style: normal;
+font-weight: 300;
+font-size: 1rem;
 }
 h2.template-info_restaurant {
-  font-size: 1.5rem;
-  margin: .2rem 0;
-  text-transform: uppercase;
+font-size: 1.5rem;
+margin: .2rem 0;
+text-transform: uppercase;
 }
 .template-info_location {
-  font-size: .8rem;
+font-size: .8rem;
+}
+
+.template-info_type{
+margin: .2rem 0;
 }
 
 .template-comment {
-  font-weight: 400;
-  font-size: 1rem;
-  width: 100%;
-  
+font-weight: 400;
+font-size: 1rem;
+width: 100%;
+
 }
 
 
 .fa-solid.fa-circle-plus::before{
-  color: #FFC700;
-  font-size: 5rem;
-  z-index: 100;
-  position: fixed;
-  bottom: 3%;
-  right: 3%;
+color: #FFC700;
+font-size: 5rem;
+z-index: 100;
+position: fixed;
+bottom: 3%;
+right: 3%;
 
 }
 
 
-  /*********************FOOTER*************************/
+/*********************FOOTER*************************/
 
-  #footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: black;
-    color: white;
-    font-weight: 600;
-    padding: .8em 0;
-  }
+#footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: white;
+  font-weight: 600;
+  padding: .8em 0;
+}
 
-  #footer div {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
+#footer div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
-  .btn-large {
-  border: none;
-  border-radius: 2px;
-  display: inline-block;
-  height: 36px;
-  line-height: 36px;
-  padding: 0 16px;
-  text-transform: uppercase;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
+.btn-large {
+border: none;
+border-radius: 2px;
+display: inline-block;
+height: 36px;
+line-height: 36px;
+padding: 0 16px;
+text-transform: uppercase;
+vertical-align: middle;
+-webkit-tap-highlight-color: transparent;
 }
 
 
 .fixed-action-btn {
-  position: fixed;
-  right: 23px;
-  bottom: 23px;
-  padding-top: 15px;
-  margin-bottom: 0;
-  z-index: 997;
+position: fixed;
+right: 23px;
+bottom: 23px;
+padding-top: 15px;
+margin-bottom: 0;
+z-index: 997;
 }
 .btn-floating:hover {
-  -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+-webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
 }
 .btn-floating {
-  display: inline-block;
-  color: #fff;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  width: 60px;
-  height: 60px;
-  line-height: 40px;
-  padding: 0;
-  background-color: #FFC700;
-  border-radius: 50%;
-  -webkit-transition: background-color .3s;
-  transition: background-color .3s;
-  cursor: pointer;
-  vertical-align: middle;
+display: inline-block;
+color: #fff;
+position: relative;
+overflow: hidden;
+z-index: 1;
+width: 60px;
+height: 60px;
+line-height: 40px;
+padding: 0;
+background-color: #FFC700;
+border-radius: 50%;
+-webkit-transition: background-color .3s;
+transition: background-color .3s;
+cursor: pointer;
+vertical-align: middle;
 }
 .btn-floating:hover {
-  background-color: #ffc800db;
+background-color: #ffc800db;
 }
 .btn-floating:before {
-  border-radius: 0;
+border-radius: 0;
 }
 .fas.fa-plus{
-  font-size: 1.5em;
-  position: relative;
+font-size: 1.5em;
+position: relative;
 }
-.modal {
-  -webkit-box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
+
+/* .modal {
+-webkit-box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
 }
-.modal {
-  display: none;
-  position: fixed;
-  left: 0;
-  right: 0;
-  background-color: #fafafa;
-  padding: 0;
-  max-height: 70%;
-  width: 55%;
-  margin: auto;
-  overflow-y: auto;
-  border-radius: 2px;
-  will-change: top, opacity;
+
+.modalA {
+position: fixed;
+left: 0;
+right: 0;
+background-color: #fafafa;
+padding: 0;
+max-height: 70%;
+width: 55%;
+margin: auto;
+overflow-y: auto;
+border-radius: 2px;
+will-change: top, opacity;
 }
 
 .modal .modal-close {
-  cursor: pointer;
+cursor: pointer;
+} */
+
+/* MODAL */
+.wrapper.modalFloat{
+position:fixed;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+min-width: 70vw; 
+/* height: 50%;
+max-height: 50vh;  */
+padding-top: 5%;
+
+}  
+
+.modalBody {
+background: #FFFFFF;
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+align-items: center;
+align-content: center;
+gap: 2%;
+width: 100%;
+box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+align-items: center;
+/* position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%); */
+
+}
+.modalBody h3{
+font-size: 2rem;
+}
+.modalForm{
+display: block;
+width: 80%;
+font-family: "IBM Plex Sans";
+}
+
+ul{
+text-decoration: none;
+list-style-type: none;
+}
+
+.modalForm label {
+display: block;
+}
+
+.modalForm input {
+width: 100%;
+padding-bottom: 2%;
+}
+textarea{
+width: 100%;
+}
+.sub-btn {
+/* width:25%; */
+border-color: #FFC700;
+background-color:#FFC700;
+color: white;
+font-family: 'Poppins';
+font-weight: 600;
+font-size: 16px;
+line-height: 48px;
+border-radius: 5px;
+text-transform: uppercase;
+padding: 0 1rem;
+margin-top: 4%;
+}
+
+#status {
+width: 100%;
+}
+
+#modalEdit{
+display: none;
+}
+
+#modalReview{
+display: none;
 }
