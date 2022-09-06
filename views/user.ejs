@@ -1,11 +1,18 @@
 <main>
-    <h1><%=posts[0].userId.userName%>'s TOTT Reviews </h1>
-    <p> <%=posts[0].userId.userName%> has created <%=posts.length %> 
-      <% if(posts.length==1) { %>
-      review.
-    <% } else { %>  
-      reviews.
-   <% } %></p>
+  <section class="TOTRbanner">
+    <div class="TOTRbanner-item"> 
+        <h2>Welcome <b><%=user.userName %></b>!!</h2>
+   </div>
+   <a class="TOTRbanner-item" href="/" >YOUR REVIEW DASHBOARD</a>
+  </section>
+  <h3 class="page-title">You have created <%=posts.length %> 
+    <% if(posts.length==1) { %>
+    review.
+  <% } else { %>  
+    reviews.
+ <% } %></h3>
+  
+   
     <%posts.forEach(post=>{ %>
         <%console.log(post.userId)%>
 
