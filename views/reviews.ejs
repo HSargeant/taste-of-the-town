@@ -2,7 +2,9 @@
   <!--banner with user data-->
   <section class="TOTRbanner">
     <div class="TOTRbanner-item"> 
+      <%if(user){%>
         <h2>Welcome <b><%=user.userName %></b>!!</h2>
+      <%}%>
    </div>
    <a class="TOTRbanner-item">ALL RECENT REVIEWS</a>
   </section>
@@ -30,11 +32,16 @@
                <!--Unused info 
                 <h4>Type: <%=post.foodType%></h4>
                 <span>Favorite dish: <%=post.favDish%></span>-->
-                <%if(user._id.toString()==post.userId._id.toString()){%>
-                  <a href="/reviews/<%=post._id%>" ><i class="fas fa-edit edit"></i></a>
-               <i class="fas fa-trash delete"></i>
-               
-                <%}%>
+                <%if(user){%>
+
+                  <%if(user._id.toString()==post.userId._id.toString()){%>
+                    <a href="/reviews/<%=post._id%>" ><i class="fas fa-edit edit"></i></a>
+                 <i class="fas fa-trash delete"></i>
+                 
+                  <%}%>
+
+               <% }%>
+        
               </div>
       
       <%}) %>
