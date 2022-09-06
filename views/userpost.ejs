@@ -1,0 +1,51 @@
+<main>  
+    <section class="TOTRbanner">
+          <h1 class="TOTRbanner-item">REVIEWS from <%=posts[0].userId.userName%></h1>
+    </section>
+    <h3 class="page-title">There are <%=posts.length %> 
+      <% if(posts.length==1) { %>
+      review here.
+    <% } else { %>  
+      reviews here.
+   <% } %></h3>
+    
+   <section class="reviews wrapper">
+  
+      <%posts.forEach(post=>{ %>
+          <%console.log(post.userId)%>
+  
+            <div class="review-card" data-id='<%=post._id%>'>        
+              <i class="fa-solid fa-circle-user"></i>
+              <div class="template-info">
+            
+  <!-- Get username to try to put in head--> 
+  <%if(user){%>
+    <%if(post.userId._id==user._id.toString()){%>
+      <span class="template-info_username"><a href="/reviews/"><%=post.userId.userName%></a></span>
+      <% filtered =post.userId.userName %>
+      <% } else { %>
+        <span class="template-info_username"><a href="/reviews/user/<%=post.userId._id.toString()%>"><%=post.userId.userName%></a></span>
+        <% filtered =post.userId.userName %>
+        <%}%>
+    <%}%>
+  </span>
+  
+                    <h2 class="template-info_restaurant"><%=post.restaurant%></h2>
+                    <span class="template-info_location">Location: <%=post.city%>, <%=post.state%> -- <%=post.country.split('-').join(' ')%></span>
+                    <h4 class="template-info_type">Type: <%=post.foodType%></h4>
+                    <span class="template-info_user">Favorite dish: <%=post.favDish%></span>
+                      </div>
+                    <p class="template-comment">"<%=post.comment%>"</p>
+                    <%if(user._id.toString()==post.userId._id.toString()){%>
+                      <a href="/reviews/<%=post._id%>" ><i class="fas fa-edit edit"></i></a>
+                   <i class="fas fa-trash delete"></i>
+                   
+                    <%}%>
+            </div>
+            
+          <%}) %>
+    
+    </section>
+    <i id="addReview" class="fa-solid fa-circle-plus"></i>
+    <% console.log('filtered is the value ' + filtered) %>
+    </main>
