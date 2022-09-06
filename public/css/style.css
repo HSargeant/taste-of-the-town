@@ -438,3 +438,11 @@ textarea{
 #modalReview{
   display: none;
 }
+.fa-solid.fa-circle-xmark::before{
+  color: #FFC700;
+  font-size: 2rem;
+  position: absolute;
+  top: 9%;
+  right: 2%;
+  
+}
