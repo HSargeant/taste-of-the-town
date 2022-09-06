@@ -2,8 +2,11 @@ const deleteBtn = document.querySelectorAll('.delete')
 const todoItem = document.querySelectorAll('span.not')
 const todoComplete = document.querySelectorAll('span.completed')
 var formsSelect = document.querySelectorAll('select');
+const addReviewButton = document.querySelector('#addReview')
+const modal = document.querySelector('#modalReview')
+const editModal = document.querySelector('#modalEdit')
 
-
+addReviewButton.addEventListener('click',addreviewModal)
 
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteReview)
@@ -78,3 +81,30 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
     buttons[0].classList.add("carousel__button--selected");
   });
 
+function addreviewModal(){
+  console.log("click")
+  modal.style.display="block"
+  // document.querySelector("#modalReview").classList.add('hide')
+
+
+  // document.getElementById("aboutBackdrop").style.display = "block"
+  // document.getElementById("aboutModal").style.display = "block"
+  // document.getElementById("aboutModal").classList.add("show")
+}
+
+// When the user clicks anywhere outside of the modal, close it
+function closeModal(){
+    
+
+  modal.style.display = "none"
+
+  editModal.style.display = "none"
+
+}
+window.onclick = function(event) {
+  if (event.target == modal || event.target == editModal ) {
+      closeModal()
+  }
+}
+
+document.querySelector('.close-btn').addEventListener('click',closeModal)
