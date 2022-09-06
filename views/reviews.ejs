@@ -13,12 +13,13 @@
   <h3 class="page-title">Check out what's good!</h3>
   <section class="reviews wrapper">
 
-  <%posts.forEach(post=>{ %>
-        <div class="review-card" data-id='<%=post._id%>'>
-          <!-- <div class="template-top"> -->
-              <!-- <div class="template-userimage"> -->
+          <%posts.forEach(post=>{ %>
+                <div class="review-card" data-id='<%=post._id%>'>
+            
+
+      <!--user icon -->
                 <i class="fa-solid fa-circle-user"></i>
-              <!-- </div> -->
+              <!-- information -->
               <div class="template-info">
                 <span class="template-info_user">Username</span>
                 <h2 class="template-info_restaurant"><%=post.restaurant%></h2>
@@ -26,24 +27,25 @@
                 <h4 class="template-info_type">Type: <%=post.foodType%></h4>
                   <span class="template-info_user">Favorite dish: <%=post.favDish%></span>
               </div>
-          <!-- </div> -->
-                <p class="template-comment">"<%=post.comment%>"</p>
+                   
+    <!-- comment -->
+                <p class="template-comment"><%=post.comment%></p>
               
-               <!--Unused info 
-                <h4>Type: <%=post.foodType%></h4>
-                <span>Favorite dish: <%=post.favDish%></span>-->
-                <%if(user){%>
-
-                  <%if(user._id.toString()==post.userId._id.toString()){%>
-                    <a href="/reviews/<%=post._id%>" ><i class="fas fa-edit edit"></i></a>
-                 <i class="fas fa-trash delete"></i>
-                 
-                  <%}%>
-
-               <% }%>
-        
+             <!--Review action buttons-->
+             <%if(user){%>
+            
+              <%if(user._id.toString()==post.userId._id.toString()){%>
+              <div class="template-icons">
+                <i class="fas fa-trash delete"></i>
+                <a href="/reviews/<%=post._id%>" ><i class="fas fa-edit edit"></i></a>
+                
               </div>
-      
+              <%}%>
+            
+           <% }%>
+              </div>
+        
+  
       <%}) %>
 
     </section>
