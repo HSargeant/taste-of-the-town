@@ -1,4 +1,4 @@
-<main>
+<main class="main">
   <!--banner with user data-->
   <section class="TOTRbanner">
     <div class="TOTRbanner-item"> 
@@ -7,26 +7,25 @@
    <a class="TOTRbanner-item" href="/" >TOTR</a>
   </section>
 
-  <!--reviews from only currently logged in user -->
-  <section class="reviews">
-  <div>
-    <h3>Recent Reviews:</h3>
-  </div>
+
+  <!--reviews from only currently logged in user -->git
+  <h3 class="page-title">your reviews:</h3>
+  <section class="reviews wrapper">
+
   <%posts.forEach(post=>{ %>
-        <div class="template" data-id='<%=post._id%>'>
-          <div class="template-top">
-              <div class="template-userimage">
-                <img src="userstandin.jpg">
-              </div>
+        <div class="review-card" data-id='<%=post._id%>'>
+          <!-- <div class="template-top"> -->
+              <!-- <div class="template-userimage"> -->
+                <i class="fa-solid fa-circle-user"></i>
+              <!-- </div> -->
               <div class="template-info">
                 <span class="template-info_user">Username</span>
                 <h2 class="template-info_restaurant"><%=post.restaurant%></h2>
                 <span class="template-info_location"><%=post.city.toUpperCase()%>, <%=post.state.toUpperCase()%> -- <%=post.country.split('-').join(' ').toUpperCase()%></span>
               </div>
-          </div>
-              <div class="template-comment">
-                <p>"<%=post.comment%>"</p>
-              </div>
+          <!-- </div> -->
+                <p class="template-comment">"<%=post.comment%>"</p>
+              
                <!--Unused info 
                 <h4>Type: <%=post.foodType%></h4>
                 <span>Favorite dish: <%=post.favDish%></span>-->
@@ -42,4 +41,5 @@
 
 
   </section>
+  <i id="addReview" class="fa-solid fa-circle-plus"></i>
 </main>
