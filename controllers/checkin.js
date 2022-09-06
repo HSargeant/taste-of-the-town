@@ -2,10 +2,11 @@ const Checkin = require('../models/Checkin')
 const countryList = require('country-list')
 
 module.exports = {
-    getCheckins: async (req,res)=>{
+    getPublicCheckins: async (req,res)=>{
         try{
-            const posts = await Checkin.find({userId:req.user.id})
+            const posts = await Checkin.find({status:"public"})
             .populate('userId')
+            .lean()
             res.render('reviews.ejs', {title: 'Tastes of the Town', posts: posts, user: req.user, countryData: countryList.getData()})
         }catch(err){
             console.log(err)

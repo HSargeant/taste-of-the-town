@@ -6,21 +6,19 @@
           </li>
           <%if(user){%>
             <li class="nav-item">
-                <a href="/reviews">All Reviews</a>
+                <a href="/reviews">Reviews</a>
             </li>
             <li class="nav-item">
-                <a href="/user/:id">Your Reviews</a>
+                <a href="/dashboard">Dashboard</a>
             </li>
             <li class="nav-item">
                 <a href="/logout">Logout</a>
             </li>
         <%}else{ %>
-            <li class="nav-item">
-                <a href="/login">Login</a>
-            </li>
-            <li class="nav-item">
-                <a href="/signup">Signup</a>
-            </li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/reviews">Reviews</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Signup</a></li>
         <%}%>
         </ul>
       </nav>
