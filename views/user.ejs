@@ -3,7 +3,7 @@
     <div class="TOTRbanner-item"> 
         <h2>Welcome <b><%=user.userName %></b>!!</h2>
    </div>
-   <a class="TOTRbanner-item" href="/" >YOUR REVIEW DASHBOARD</a>
+   <a class="TOTRbanner-item">YOUR REVIEW DASHBOARD</a>
   </section>
   <h3 class="page-title">You have created <%=posts.length %> 
     <% if(posts.length==1) { %>
@@ -17,7 +17,7 @@
         <%console.log(post.userId)%>
 
           <div data-id='<%=post._id%>'>        
-                  <!-- <span>we need to add the username of the poster here!</span> -->
+                  
         
                   <h2><%=post.restaurant%></h2>
                   <span>Location: <%=post.city%>, <%=post.state%> -- <%=post.country.split('-').join(' ')%></span>
