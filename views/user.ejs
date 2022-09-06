@@ -24,8 +24,8 @@
         
                   <h2 class="template-info_restaurant"><%=post.restaurant%></h2>
                   <span class="template-info_location">Location: <%=post.city%>, <%=post.state%> -- <%=post.country.split('-').join(' ')%></span>
-                  <h4>Type: <%=post.foodType%></h4>
-                  <span>Favorite dish: <%=post.favDish%></span>
+                  <h4 class="template-info_type">Type: <%=post.foodType%></h4>
+                  <span class="template-info_user">Favorite dish: <%=post.favDish%></span>
                     </div>
                   <p class="template-comment">"<%=post.comment%>"</p>
                   <%if(user._id.toString()==post.userId._id.toString()){%>
