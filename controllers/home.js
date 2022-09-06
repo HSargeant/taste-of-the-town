@@ -9,7 +9,7 @@ module.exports = {
                 .populate('userId')
                 .lean()
     
-                res.render('welcome.ejs', {title: 'Tastes of the Town', posts: posts, user: req.user, countryData: countryList.getData()})
+                res.render('index.ejs', {title: 'Tastes of the Town', posts: posts, user: req.user, countryData: countryList.getData()})
             }catch(err){
                 console.log(err)
             }
