@@ -355,77 +355,85 @@ h2.template-info_restaurant {
     justify-content: center;
   }
 
-  .btn-large {
-  border: none;
-  border-radius: 2px;
-  display: inline-block;
-  height: 36px;
-  line-height: 36px;
-  padding: 0 16px;
+/* MODAL */
+.wrapper.modalFloat{
+  position:fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 70vw; 
+  /* height: 50%;
+  max-height: 50vh;  */
+  padding-top: 5%;
+
+}  
+
+.modalBody {
+  background: #FFFFFF;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  gap: 2%;
+  width: 100%;
+  box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  align-items: center;
+  /* position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  
+}
+.modalBody h3{
+  font-size: 2rem;
+}
+.modalForm{
+  display: block;
+  width: 80%;
+  font-family: "IBM Plex Sans";
+}
+
+ul{
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.modalForm label {
+  display: block;
+}
+
+.modalForm input {
+  width: 100%;
+  padding-bottom: 2%;
+}
+textarea{
+  width: 100%;
+}
+.sub-btn {
+  /* width:25%; */
+  border-color: #FFC700;
+  background-color:#FFC700;
+  color: white;
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 48px;
+  border-radius: 5px;
   text-transform: uppercase;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
+  padding: 0 1rem;
+  margin-top: 4%;
 }
 
+#status {
+  width: 100%;
+}
 
-.fixed-action-btn {
-  position: fixed;
-  right: 23px;
-  bottom: 23px;
-  padding-top: 15px;
-  margin-bottom: 0;
-  z-index: 997;
-}
-.btn-floating:hover {
-  -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
-}
-.btn-floating {
-  display: inline-block;
-  color: #fff;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  width: 60vw;
-  height: 60vw;
-  line-height: 40px;
-  padding: 0;
-  background-color: #FFC700;
-  border-radius: 50%;
-  -webkit-transition: background-color .3s;
-  transition: background-color .3s;
-  cursor: pointer;
-  vertical-align: middle;
-}
-.btn-floating:hover {
-  background-color: #ffc800db;
-}
-.btn-floating:before {
-  border-radius: 0;
-}
-.fas.fa-plus{
-  font-size: 1.5em;
-  position: relative;
-}
-.modal {
-  -webkit-box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
-}
-.modal {
+#modalEdit{
   display: none;
-  position: fixed;
-  left: 0;
-  right: 0;
-  background-color: #fafafa;
-  padding: 0;
-  max-height: 70%;
-  width: 55%;
-  margin: auto;
-  overflow-y: auto;
-  border-radius: 2px;
-  will-change: top, opacity;
 }
 
-.modal .modal-close {
-  cursor: pointer;
+#modalReview{
+  display: none;
 }
