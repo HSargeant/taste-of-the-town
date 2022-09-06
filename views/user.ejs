@@ -26,6 +26,8 @@
           
 <!-- Get username to try to put in head--> 
 <%if(user){%>
+  <%console.log(post.country)%>
+
   <%if(post.userId._id==user._id.toString()){%>
     <span class="template-info_username"><a href="/reviews/"><%=post.userId.userName%></a></span>
     <% filtered =post.userId.userName %>
@@ -43,8 +45,9 @@
                     </div>
                   <p class="template-comment">"<%=post.comment%>"</p>
                   <%if(user._id.toString()==post.userId._id.toString()){%>
-                    <a href="/reviews/<%=post._id%>" ><i class="fas fa-edit edit"></i></a>
                  <i class="fas fa-trash delete"></i>
+                 <a href="/reviews/<%=post._id%>" ><i class="fas fa-edit edit"></i></a>
+
                  
                   <%}%>
           </div>
@@ -52,6 +55,8 @@
         <%}) %>
   
   </section>
+
+  
 
 
   <% console.log('filtered is the value ' + filtered) %>

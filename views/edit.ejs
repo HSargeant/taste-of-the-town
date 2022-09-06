@@ -1,10 +1,11 @@
-<main class="container">
+<main class="wrapper">
+    <section class="modalBody">
     <h3>Edit Your Review</h3>
     <%console.log(post._id)%>
-    <form action="/reviews/update" method='POST' id="<%=post._id%>">
+    <form class="modalForm" action="/reviews/update" method='POST' id="<%=post._id%>">
         <input type="hidden" name="_method" value="PUT">
         <input type="hidden" name="_id" value="<%=post._id%>">
-        <label for="restaurant" ">Restaurant Name:</label>
+        <label for="restaurant-modal">Restaurant Name:</label>
         <input type="text" placeholder="" name='restaurant' value="<%=post.restaurant%>" required>
         <label for="country">Country:</label>
             <select name="country" id="country">
@@ -13,15 +14,15 @@
                     <option value=<%= countryData[i].name.split(' ').join('-') %>><%= countryData[i].name %></option>
                 <% } %>
             </select>
-        <label for="state">State/Province/Region:</label>
+        <label for="state-modal">State/Province/Region:</label>
         <input type="text" placeholder="State/Province/Region" name='state' value="<%=post.state%>" required>
-        <label for="city">City:</label>
+        <label for="city-modal">City:</label>
         <input type="text" placeholder="City" name='city' value="<%=post.city%>" required>
-        <label for="foodType">Type of Food:</label>
+        <label for="foodType-modal">Type of Food:</label>
         <input type="text" placeholder="Type of food" name='foodType' value="<%=post.foodType%>" required>
-        <label for="favDish">Favorite Dish:</label>
+        <label for="favDish-modal">Favorite Dish:</label>
         <input type="text" name='favDish' value="<%=post.favDish%>" required>
-        <label for="comment">Comment:</label>
+        <label for="comment-modal">Comment:</label>
         <input type="text" placeholder="Write a comment" name='comment' value="<%=post.comment%>" required>
         <select id="status" name="status" value="<%=post.status%>">
             <% if(post.status == "public"){ %>
@@ -36,4 +37,5 @@
      <!-- added a cancel button-->
         <button><a href="./" class="button" value="cancel" id="cancel" onclick= "return confirm('Are you sure you want to cancel this edit?')">Cancel</button>
     </form>
+</section>
 </main>
