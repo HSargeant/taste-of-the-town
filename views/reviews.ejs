@@ -46,8 +46,13 @@
       
       <%}) %>
 
+    </section>
+
+<!-- Make the button only show on logged in status-->
+<% if(user){ %>
+    <i id="addReview" class="fa-solid fa-circle-plus"></i>
+ 
+  <%}%>
 
 
-  </section>
-  <i id="addReview" class="fa-solid fa-circle-plus"></i>
 </main>
