@@ -3,21 +3,7 @@ const todoItem = document.querySelectorAll('span.not')
 const todoComplete = document.querySelectorAll('span.completed')
 var formsSelect = document.querySelectorAll('select');
 
-//Modal form select
-//M.FormSelect.init(formsSelect);
-//
-document.addEventListener('DOMContentLoaded', function() {
-   const modal = document.querySelectorAll('.modal');
-   M.Modal.init(modal,"dismissible");
 
-   const formsSelect = document.querySelectorAll('select');
-   M.FormSelect.init(formsSelect);
-
-
- });
-
-  
- 
 
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteReview)

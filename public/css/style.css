@@ -316,13 +316,13 @@ h2.template-info_restaurant {
   
 }
 
-
+/*Current floating button*/
 .fa-solid.fa-circle-plus::before{
   color: #FFC700;
-  font-size: 5rem;
+  font-size: 9.5vh;
   z-index: 100;
   position: fixed;
-  bottom: 3%;
+  bottom: 5%;
   right: 3%;
 
 }
@@ -377,8 +377,8 @@ h2.template-info_restaurant {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  width: 60px;
-  height: 60px;
+  width: 60vw;
+  height: 60vw;
   line-height: 40px;
   padding: 0;
   background-color: #FFC700;
