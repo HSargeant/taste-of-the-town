@@ -1,4 +1,5 @@
 const deleteBtn = document.querySelectorAll('.delete')
+const editBtn = document.querySelectorAll('.edit')
 const todoItem = document.querySelectorAll('span.not')
 const todoComplete = document.querySelectorAll('span.completed')
 var formsSelect = document.querySelectorAll('select');
@@ -10,6 +11,9 @@ addReviewButton.addEventListener('click',addreviewModal)
 
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteReview)
+})
+Array.from(editBtn).forEach((el)=>{
+    el.addEventListener('click', openEditModal)
 })
  
 Array.from(todoItem).forEach((el)=>{
@@ -24,8 +28,9 @@ Array.from(todoComplete).forEach((el)=>{
 async function deleteReview(){
     let windowConfirm = confirm("Are you sure you want to delete this review?")
     if (windowConfirm == true) {
-    const review = this.parentNode.parentNode.parentNode.parentNode.dataset.id
-        console.log(review)
+
+      const review = this.parentNode.parentNode.dataset.id ? this.parentNode.parentNode.dataset.id.trim() :this.parentNode.dataset.id.trim()
+      console.log(review)
  
     try{
         const response = await fetch('reviews/deleteCheckin', {
@@ -82,14 +87,11 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
   });
 
 function addreviewModal(){
-  console.log("click")
   modal.style.display="block"
-  // document.querySelector("#modalReview").classList.add('hide')
-
-
-  // document.getElementById("aboutBackdrop").style.display = "block"
-  // document.getElementById("aboutModal").style.display = "block"
-  // document.getElementById("aboutModal").classList.add("show")
+}
+function openEditModal(){
+  console.log("click")
+  editModal.style.display="block"
 }
 
 // When the user clicks anywhere outside of the modal, close it
