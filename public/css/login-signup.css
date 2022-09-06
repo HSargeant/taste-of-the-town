@@ -173,3 +173,11 @@ ul.dropdown-content.select-dropdown li span {
 .material-icons.active {
     color: #FFC700 !important;
 }
+
+.btn {
+    font-family: 'Poppins', sans-serif;
+}
+
+.brand-logo:hover {
+    color: #FFC700 !important;
+}

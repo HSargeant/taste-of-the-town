@@ -2,13 +2,15 @@
     <section class="TOTRbanner">
           <h1 class="TOTRbanner-item">REVIEWS from <%=posts[0].userId.userName%></h1>
     </section>
-    <h3 class="page-title">There are <%=posts.length %> 
+    <h3 class="page-title">There 
       <% if(posts.length==1) { %>
-      review here.
+      is <%=posts.length %> review here.
     <% } else { %>  
-      reviews here.
+      are <%=posts.length %> reviews here.
    <% } %></h3>
-    
+   <div class="options">
+   <a href='/reviews'>RETURN TO ALL REVIEWS</a>
+  </div>
    <section class="reviews wrapper">
   
       <%posts.forEach(post=>{ %>
