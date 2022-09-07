@@ -13,7 +13,7 @@
   <h3 class="page-title">Check out what's good!</h3>
   <section class="reviews wrapper">
 
-          <%posts.forEach(post=>{ %>
+          <%posts.reverse().forEach(post=>{ %>
                 <div class="review-card" data-id='<%=post._id%>'>
       <!--user icon -->
                 <i class="fa-solid fa-circle-user"></i>
