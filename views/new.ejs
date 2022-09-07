@@ -53,10 +53,20 @@
                 </button>
             </div>
             <div class="col s4 m3 l3 input-field">
-                <button class="width-100 btn waves-effect waves-light black center"><a href="./" class="white-text hover-gold" value="cancel" id="cancel" onclick= "return confirm('Are you sure you want to cancel this edit?')">Cancel</button>
-                </button>
+                <button id="cancel" class="width-100 btn waves-effect waves-light black center">Cancel</button>
             </div>
         </div>
     </form>
     </div>    
 </main>
+
+<script>
+    document.querySelector('#cancel').addEventListener('click',()=>{
+  let x = confirm("Sure you want to cancel?")
+
+  if(x){
+    window.location.href = '/';
+  }
+
+})
+</script>
