@@ -1,0 +1,48 @@
+<main>  
+    <section class="TOTRbanner">
+          <h1 class="TOTRbanner-item">REVIEWS from <%=posts[0].userId.userName%></h1>
+    </section>
+    <h3 class="page-title">There 
+      <% if(posts.length==1) { %>
+      is <%=posts.length %> review here.
+    <% } else { %>  
+      are <%=posts.length %> reviews here.
+   <% } %></h3>
+   <div class="options">
+   <a href='/reviews'>RETURN TO ALL REVIEWS</a>
+  </div>
+   <section class="reviews wrapper">
+  
+      <%posts.reverse().forEach(post=>{ %>
+  
+            <div class="review-card" data-id='<%=post._id%>'>        
+              <i class="fa-solid fa-circle-user"></i>
+              <div class="template-info">
+            
+  <!-- Get username to try to put in head--> 
+  <%if(user){%>
+    <%if(post.userId._id==user._id.toString()){%>
+      <span class="template-info_username"><a href="/reviews/"><%=post.userId.userName%></a></span>
+      <% filtered =post.userId.userName %>
+      <% } else { %>
+        <span class="template-info_username"><a href="/reviews/user/<%=post.userId._id.toString()%>"><%=post.userId.userName%></a></span>
+        <% filtered =post.userId.userName %>
+        <%}%>
+    <%}%>
+  </span>
+  
+                    <h2 class="template-info_restaurant"><%=post.restaurant%></h2>
+                    <span class="template-info_location">Location: <%=post.city%>, <%=post.state%> -- <%=post.country%></span>
+                    <h4 class="template-info_type">Type: <%=post.foodType%></h4>
+                    <span class="template-info_user">Favorite dish: <%=post.favDish%></span>
+                      </div>
+                    <p class="template-comment">"<%=post.comment%>"</p>
+            </div>
+            
+          <%}) %>
+    
+    </section>
+
+    
+ 
+    </main>

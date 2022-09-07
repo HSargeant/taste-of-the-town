@@ -1,54 +1,38 @@
-
-<main>
-  <%if(user){%>
-    <p class='center message'>Welcome to Taste of the Town, <%=user.userName %>!</p>
-    <%}else{%>
-    <p class='center message'>Welcome to Taste of the Town. Check out the reviews from others in your area or <a href="/signup">signup</a> up and start sharing your own great food finds!</p>
-    <%}%>
-   
-
-   
-    <%# Each card will eventually be created to access the database and a card will be generated for every entry
-    %>
-
-
-<%posts.forEach(post=>{ %>
-  <%console.log(post.userId.userName,"=============")%>
-
-  <div class="row-local-css" data-id='<%=post._id%>'>
-    <div class="col">
-      <div class="card orange lighten-4">
-        <div class="card-content black-text">
-          <%if(user){%>
-            <%if(post.userId._id==user._id.toString()){%>
-              <a href="/reviews/"><%=post.userId.userName%> </a>
-
-              <%}else{%>
-                <a href="/reviews/user/<%=post.userId._id.toString()%>"><%=post.userId.userName%></a>
-                <%}%>
-
-            <%}else{%>
-          <a href="/reviews/user/<%=post.userId._id.toString()%>"><%=post.userId.userName%></a>
-          <%}%>
-          <h2 class="card-title"><%=post.restaurant%></h2>
-          <span>Location: <%=post.city%>, <%=post.state%> -- <%=post.country.split('-').join(' ')%></span>
-          <h4 class="foodTypeSection">Type: <%=post.foodType%></h4>
-          <span class="favDishSection">Favorite Dish: <%=post.favDish%></span>
-          <p class="commentSection">"<%=post.comment%>" 
-
-          <%if(user){%>
-            <%if(post.userId._id==user._id.toString()){%>
-              <a href="/reviews/<%=post._id%>"><i class="fas fa-edit left edit"></i></a>
-              <i class="fas fa-trash right delete"></i>
-              <%}%>
-
-          <%}%>
-          
-        </div>
+<section class="hero">
+  <div class="container center">
+    <h1 class="hero-title">TOTR</h1>
+    <div class="center">
+      <h2 class="hero-tagline">taste of the <br> town reviews</h2>
+    </div>
+  </div>
+</section>
+<div class="banner bg-gold">
+  <div class="container center">
+    <div class="carousel-local">
+      <div class="carousel__item"><p>Discover new things to taste in YOUR town.</p></div>
+      <div class="carousel__item"><p>Keep public and private notes on the restaurants you have tried.</p></div>
+      <div class="carousel__item"><p>Read and write reviews without the annoying photos.</p></div>
+    </div>
+  </div>
+</div>
+<main class="container main center">
+  <div class="flex-column-justify-center">
+    <div class="row no-margin">
+      <div class="col s8 offset-s2 m6 offset-m3 l4 offset-l4 input-field no-margin-bottom margin-top-40">
+        <a href="/login" tabindex="6" class="btn black white-text waves-effect waves-light modal-submit width-100 black-text">login
+        </a>
+      </div>
+    </div>
+    <div class="row no-margin">
+      <div class="col s8 offset-s2 m6 offset-m3 l4 offset-l4 input-field margin-top-6">
+        <a href="/signup" class="btn black-border white black-text waves-effect waves-light modal-submit width-100 ">sign up
+          </a>
+      </div>
+    </div>
+    <div class="row no-margin">
+      <div class="col s8 offset-s2 m6 offset-m3 l4 offset-l4 input-field">
+        <a href='/reviews' class="black-text">READ REVIEWS</a>
       </div>
     </div>
   </div>
-
-<%}) %>
-
 </main>

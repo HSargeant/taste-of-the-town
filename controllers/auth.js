@@ -32,7 +32,7 @@ const User = require('../models/User')
       req.logIn(user, (err) => {
         if (err) { return next(err) }
         req.flash('success', { msg: 'Success! You are logged in.' })
-        res.redirect(req.session.returnTo || '/dashboard')
+        res.redirect(req.session.returnTo || '/reviews')
       })
     })(req, res, next)
   }
@@ -51,7 +51,7 @@ const User = require('../models/User')
       return res.redirect('/dashboard')
     }
     res.render('signup', {
-      title: 'Taste of The Town',
+      title: 'Create Account',
       layout: './layouts/login-signup'
     })
   }

@@ -2,13 +2,12 @@ const Checkin = require('../models/Checkin')
 const countryList = require('country-list')
 
 module.exports = {
-    getPublicReviews: async (req,res)=>{
+    getPublicCheckins: async (req,res)=>{
         try{
             const posts = await Checkin.find({status:"public"})
             .populate('userId')
             .lean()
-
-            res.render('index.ejs', {title: 'Tastes of the Town', posts: posts, user: req.user, countryData: countryList.getData()})
+            res.render('reviews.ejs', {title: 'Tastes of the Town', posts: posts, user: req.user, countryData: countryList.getData()})
         }catch(err){
             console.log(err)
         }
@@ -18,7 +17,7 @@ module.exports = {
         try{
             const posts = await Checkin.find({userId:req.params.id,status:"public"})
             .populate('userId')
-            res.render('user.ejs', {title: 'Tastes of the Town', posts: posts, user: req.user, countryData: countryList.getData()})
+            res.render('userpost.ejs', {title: 'Tastes of the Town', posts: posts, user: req.user, countryData: countryList.getData()})
         }catch(err){
             console.log(err)
         }
@@ -66,7 +65,12 @@ module.exports = {
         if(review.userId != req.user.id){
             res.redirect('/')
         }else      res.render('./edit.ejs',{ 
-            post: review,title:"Taste of the Town", user:req.user.id, countryData: countryList.getData()
+            post: review, layout: './layouts/edit', title:"Taste of the Town", user:req.user.id, countryData: countryList.getData()
+        })
+    },
+    addCheckin: (req,res)=>{
+             res.render('./new.ejs',{ 
+            layout: './layouts/edit', title:"Taste of the Town", user:req.user.id, countryData: countryList.getData()
         })
     },
     updateCheckin: async (req, res)=>{

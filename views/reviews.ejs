@@ -1,41 +1,69 @@
-<main class="container">
-  <h1><%=user.userName %>'s TOTT Reviews </h1>
-  <p>You have created <%= posts.length %> 
-    <% if(posts.length==1) { %>
-    review.
-  <% } else { %>  
-    reviews.
- <% } %> Thanks for sharing!</p>
-  <p>Feel free to add reviews or edit any reviews you have previously made.</p>     
-  <%console.log(posts[0])%>
-  <%posts.forEach(post=>{ %>
-        <div class="row-local-css" data-id='<%=post._id%>'>
-          <div class="col">
-            <div class="card orange lighten-4">
-              <div class="card-content black-text">
-      
-                <!-- <span>we need to add the username of the poster here!</span> -->
-      
-                <h2 class="card-title"><%=post.restaurant%></h2>
-                <span>Location: <%=post.city%>, <%=post.state%> -- <%=post.country.split('-').join(' ')%></span>
-                <h4 class="foodTypeSection">Type: <%=post.foodType%></h4>
-                <span class="favDishSection">Favorite dish: <%=post.favDish%></span>
-                <p class="commentSection">"<%=post.comment%>"</p>
-                <%if(user._Id==post.UserId){%>
-                  <a href="/reviews/<%=post._id%>" ><i class="fas fa-edit left edit"></i></a>
-               <i class="fas fa-trash right delete"></i>
-               
-                <%}%>
-              </div>
+<main>
+  <!--banner with user data-->
+  <section class="TOTRbanner">
+      <h1 class="TOTRbanner-item">ALL RECENT REVIEWS</h1>
+      <%if(user){%>
+        <h2>Welcome <b><%=user.userName %></b>!!</h2>
+      <%} else { %>
+        <h2>Join us in the <b>TOTRverse</b>. <a href='/signup'><b>SIGN UP HERE</a>!</b></h2>
+        <% } %>
+  </section>
 
-            </div>
+
+  <h3 class="page-title">Check out what's good!</h3>
+  <section class="reviews wrapper">
+
+          <%posts.reverse().forEach(post=>{ %>
+                <div class="review-card" data-id='<%=post._id%>'>
+      <!--user icon -->
+                <i class="fa-solid fa-circle-user"></i>
+              <!-- information -->
+              <div class="template-info">
+                <span class="template-info_user">
+                  <!--get username-->
+                  <%if(user){%>
+
+                    <%if(post.userId._id==user._id.toString()){%>
+                      <span class="template-info_username"><a href="/dashboard"><%=post.userId.userName%></a></span>
+        
+                    <% } else { %>
+                        <span class="template-info_username"><a href="/reviews/user/<%=post.userId._id.toString()%>"><%=post.userId.userName%></a></span>
+                        <%}%>
+
+                  <%}else{%>
+                    <span class="template-info_username"><a href="/reviews/user/<%=post.userId._id.toString()%>"><%=post.userId.userName%></a></span>
+
+                  <%}%>
+                </span>
+                <h2 class="template-info_restaurant"><%=post.restaurant%></h2>
+                <span class="template-info_location"><%=post.city.toUpperCase()%>, <%=post.state.toUpperCase()%> -- <%=post.country.split('-').join(' ').toUpperCase()%></span>
+                <h4 class="template-info_type">Type: <%=post.foodType%></h4>
+                  <span class="template-info_user">Favorite dish: <%=post.favDish%></span>
+              </div>
+                   
+    <!-- comment -->
+                <p class="template-comment"><%=post.comment%></p>
+              
+             <!--Review action buttons-->
+             <%if(user){%>
             
-          </div>
-        </div>
-      
+              <%if(user._id.toString()==post.userId._id.toString()){%>
+              <div class="template-icons">
+                <i class="fas fa-trash delete"></i>
+                <a href="/reviews/<%=post._id%>" ><i class="fas fa-edit edit"></i></a>
+                
+              </div>
+              <%}%>
+            
+           <% }%>
+              </div>
+        
+  
       <%}) %>
 
+    </section>
 
 
-    
+
+
 </main>

@@ -1,37 +1,50 @@
-<main class="container">
-    <h1><%=posts[0].userId.userName%>'s TOTT Reviews </h1>
-    <p> <%=posts[0].userId.userName%> has created <%=posts.length %> 
-      <% if(posts.length==1) { %>
-      review.
-    <% } else { %>  
-      reviews.
-   <% } %></p>
-    <%posts.forEach(post=>{ %>
-        <%console.log(post.userId)%>
+<main>
+  <% let filtered = user.userName %>
 
-          <div class="row-local-css" data-id='<%=post._id%>'>
-            <div class="col">
-              <div class="card orange lighten-4">
-                <div class="card-content black-text">
-        
-                  <!-- <span>we need to add the username of the poster here!</span> -->
-        
-                  <h2 class="card-title"><%=post.restaurant%></h2>
-                  <span>Location: <%=post.city%>, <%=post.state%> -- <%=post.country.split('-').join(' ')%></span>
-                  <h4 class="foodTypeSection">Type: <%=post.foodType%></h4>
-                  <span class="favDishSection">Favorite dish: <%=post.favDish%></span>
-                  <p class="commentSection">"<%=post.comment%>"</p>
-
-                </div>
+  <section class="TOTRbanner">
+        <h1 class="TOTRbanner-item">REVIEWS from <%=filtered.toUpperCase() %></h1>
+        <h2>Welcome <b><%=user.userName %></b>!!</h2>
+  </section>
+  <h3 class="page-title">There are <%=posts.length %> 
+    <% if(posts.length==1) { %>
+    review here.
+  <% } else { %>  
+    reviews here.
+ <% } %></h3>
   
-              </div>
-              
-            </div>
+ <section class="reviews wrapper">
+
+    <%posts.reverse().forEach(post=>{ %>
+          <div class="review-card" data-id='<%=post._id%>'>        
+            <i class="fa-solid fa-circle-user"></i>
+            <div class="template-info">
+          
+<!-- Get username to try to put in head--> 
+<%if(user){%>
+
+  <%if(post.userId._id==user._id.toString()){%>
+    <span class="template-info_username"><a href="/reviews/"><%=post.userId.userName%></a></span>
+    <% filtered =post.userId.userName %>
+    <% } else { %>
+      <span class="template-info_username"><a href="/reviews/user/<%=post.userId._id.toString()%>"><%=post.userId.userName%></a></span>
+      <% filtered =post.userId.userName %>
+      <%}%>
+  <%}%>
+</span>
+
+                  <h2 class="template-info_restaurant"><%=post.restaurant%></h2>
+                  <span class="template-info_location">Location: <%=post.city%>, <%=post.state%> -- <%=post.country.split('-').join(' ')%></span>
+                  <h4 class="template-info_type">Type: <%=post.foodType%></h4>
+                  <span class="template-info_user">Favorite dish: <%=post.favDish%></span>
+                    </div>
+                  <p class="template-comment">"<%=post.comment%>"</p>
+                  <%if(user._id.toString()==post.userId._id.toString()){%>
+                 <i class="fas fa-trash delete"></i>
+                 <a href="/reviews/<%=post._id%>" ><i class="fas fa-edit edit"></i></a>         
+                  <%}%>
           </div>
-        
+          
         <%}) %>
-  
-  
-  
-      
+
+  </section>
   </main>
