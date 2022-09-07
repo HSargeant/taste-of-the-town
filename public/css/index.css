@@ -126,7 +126,7 @@ ul.dropdown-content.select-dropdown li span {
     background-size: cover;
     background-attachment: local;
     background-position: center ;
-    background-image: url("/heroimage.jpg");
+    background-image: url("/heroimage.webp");
 }
 
 .hero-title {
