@@ -65,7 +65,7 @@ module.exports = {
         if(review.userId != req.user.id){
             res.redirect('/')
         }else      res.render('./edit.ejs',{ 
-            post: review,title:"Taste of the Town", user:req.user.id, countryData: countryList.getData()
+            post: review, layout: './layouts/edit', title:"Taste of the Town", user:req.user.id, countryData: countryList.getData()
         })
     },
     updateCheckin: async (req, res)=>{
