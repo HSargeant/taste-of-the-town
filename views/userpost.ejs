@@ -12,7 +12,9 @@
    <a href='/reviews'>RETURN TO ALL REVIEWS</a>
   </div>
    <section class="reviews wrapper">
-  
+    <section class="search"> 
+      <input id="search" type="search" placeholder="Filter by Location"> 
+  </section>
       <%posts.reverse().forEach(post=>{ %>
   
             <div class="review-card" data-id='<%=post._id%>'>        
