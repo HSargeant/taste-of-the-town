@@ -2,7 +2,7 @@
 
 Full-stack social application for logging private and public restaurant experiences. Public experiences are available to any website visitor; however, an account is necessary to post and interact with other reviews.
 
-[LIVE APP DUE 9/6/2022 (EST)](https://www.google.com/ "Taste of the Town")
+https://totr.up.railway.app/
 
 ## Features
 
