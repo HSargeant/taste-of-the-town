@@ -11,12 +11,15 @@
 
 
   <h3 class="page-title">Check out what's good!</h3>
+  
   <section class="reviews wrapper">
-
+    <section class="search"> 
+      <input id="search" type="search" placeholder="Filter by Location"> 
+  </section>
           <%posts.reverse().forEach(post=>{ %>
-                <div class="review-card" data-id='<%=post._id%>'>
+                <div class="review-card `<%=post.state%>`  <%=post.country%>" data-id='<%=post._id%>'>
       <!--user icon -->
-                <i class="fa-solid fa-circle-user"></i>
+                <i class="fa-solid fa-circle-user"></i>s
               <!-- information -->
               <div class="template-info">
                 <span class="template-info_user">
