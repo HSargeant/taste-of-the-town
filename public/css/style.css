@@ -121,7 +121,7 @@ margin: 20% 20%;
   background-size: cover;
   background-attachment: local;
   background-position: center ;
-  background-image: url("/heroimage.jpg");
+  background-image: url("/heroimage.webp");
 }
 
 .hero-title {
