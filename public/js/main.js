@@ -7,7 +7,7 @@ const addReviewButton = document.querySelector('#addReview')
 const modal = document.querySelector('#modalReview')
 const editModal = document.querySelector('#modalEdit')
 
-addReviewButton.addEventListener('click',addreviewModal)
+// addReviewButton.addEventListener('click',addreviewModal)
 
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteReview)
@@ -125,7 +125,6 @@ function filterCards(){
   let filter = input.value.toUpperCase();
   let location = document.querySelectorAll('.template-info_location')
 
-  console.log(filter,location)
   for (i = 0; i < location.length; i++) {
     txtValue=location[i].innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
