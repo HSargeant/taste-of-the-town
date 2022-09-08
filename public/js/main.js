@@ -12,17 +12,9 @@ const editModal = document.querySelector('#modalEdit')
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteReview)
 })
-Array.from(editBtn).forEach((el)=>{
-    el.addEventListener('click', openEditModal)
-})
- 
-Array.from(todoItem).forEach((el)=>{
-    el.addEventListener('click', markComplete)
-})
- 
-Array.from(todoComplete).forEach((el)=>{
-    el.addEventListener('click', markIncomplete)
-})
+// Array.from(editBtn).forEach((el)=>{
+//     el.addEventListener('click', openEditModal)
+// })
 
 //added a "windowConfirm" variable to open a confirmation window for deleting. 
 async function deleteReview(){
@@ -89,28 +81,28 @@ document.querySelectorAll(".carousel-local").forEach((carousel) => {
 });
 
 
-function addreviewModal(){
-  modal.style.display="block"
-}
-function openEditModal(){
-  console.log("click")
-  editModal.style.display="block"
-}
+  // function addreviewModal(){
+  //   modal.style.display="block"
+  // }
+  // function openEditModal(){
+  //   console.log("click")
+  //   editModal.style.display="block"
+  // }
 
 // When the user clicks anywhere outside of the modal, close it
-function closeModal(){
+// function closeModal(){
     
 
-  modal.style.display = "none"
+//   modal.style.display = "none"
 
-  editModal.style.display = "none"
+//   editModal.style.display = "none"
 
-}
-window.onclick = function(event) {
-  if (event.target == modal || event.target == editModal ) {
-      closeModal()
-  }
-}
+// }
+// window.onclick = function(event) {
+//   if (event.target == modal || event.target == editModal ) {
+//       closeModal()
+//   }
+// }
 
 // document.querySelector('.close-btn').addEventListener('click',closeModal)
 
