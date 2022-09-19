@@ -15,6 +15,8 @@ This node.js application primarily utilizes ejs for templating, express for serv
 ## Current Objectives
 
 - improve UX/UI
+render error pages
+add 'like a post' feature
 
 ## Use
 
