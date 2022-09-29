@@ -1,6 +1,7 @@
 const path = require('path')
 const express = require('express')
 const app = express()
+const PORT=8000
 const expressLayouts = require('express-ejs-layouts')
 const mongoose = require('mongoose')
 const passport = require('passport')
@@ -65,6 +66,6 @@ app.use('/', mainRoutes)
 app.use('/reviews', reviewsRoutes)
 app.use('/dashboard', dashboardRoutes)
  
-app.listen(process.env.PORT, ()=>{
-    console.log(`running on port ${process.env.PORT}`)
+app.listen(process.env.PORT||PORT, ()=>{
+    console.log(`running on port ${PORT}`)
 })    
