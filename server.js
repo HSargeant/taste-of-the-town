@@ -77,7 +77,7 @@ const connectDB = async () => {
     })
     console.log(`MongoDB Connected: ${conn.connection.host}`)
     app.listen(process.env.PORT||PORT, ()=>{
-      console.log(`running on port ${PORT}`)
+      console.log(`Running on port ${PORT}`)
   })    
 
   } catch (err) {
@@ -85,4 +85,5 @@ const connectDB = async () => {
     process.exit(1)
   }
 }
+
 connectDB()
