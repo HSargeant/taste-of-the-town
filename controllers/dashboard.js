@@ -2,7 +2,6 @@ const Checkin = require('../models/Checkin')
 const countryList = require('country-list')
 
 module.exports = {
-
     getUserCheckins: async (req,res)=>{
         try{
             const posts = await Checkin.find({userId:req.user.id})
@@ -11,6 +10,5 @@ module.exports = {
         }catch(err){
             console.log(err)
         }
-        
     }
 }

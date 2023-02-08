@@ -10,7 +10,7 @@ const MongoStore = require('connect-mongo')(session)
 const methodOverride = require('method-override')
 const flash = require('express-flash')
 const logger = require('morgan')
-const connectDB = require('./config/database')
+// const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const reviewsRoutes = require('./routes/reviews')
 const dashboardRoutes = require('./routes/dashboard')
@@ -24,7 +24,7 @@ require('dotenv').config({path: './config/.env'})
 // Passport config
 require('./config/passport')(passport)
 
-connectDB()
+
 
 app.set('view engine', 'ejs')
 // ejs layouts
@@ -66,6 +66,23 @@ app.use('/', mainRoutes)
 app.use('/reviews', reviewsRoutes)
 app.use('/dashboard', dashboardRoutes)
  
-app.listen(process.env.PORT||PORT, ()=>{
-    console.log(`running on port ${PORT}`)
-})    
+//cyclic example
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.DB_STRING, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useFindAndModify: false,
+      useCreateIndex: true
+    })
+    console.log(`MongoDB Connected: ${conn.connection.host}`)
+    app.listen(process.env.PORT||PORT, ()=>{
+      console.log(`running on port ${PORT}`)
+  })    
+
+  } catch (err) {
+    console.error(err)
+    process.exit(1)
+  }
+}
+connectDB()
