@@ -2,9 +2,7 @@
 
 Full-stack social application for logging private and public restaurant experiences. Public experiences are available to any website visitor; however, an account is necessary to post and interact with other reviews.
 
-https://tasteofthetown.herokuapp.com/
-
-backup: https://totr.up.railway.app/
+https://totr.cyclic.app/
 
 ## Features
 
