@@ -56,7 +56,6 @@ module.exports = {
         const review = await Checkin.findOne({
             _id: req.params.id
         }).lean()
-            console.log(review)
    
         if(!review){
             res.render('error/404')
